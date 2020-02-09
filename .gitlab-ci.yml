@@ -20,6 +20,13 @@ Static Test:
   script:
     - npm run check
 
+Unit Test:
+  stage: check
+  before_script:
+    - npm ci
+  script:
+    - npm test
+
 Build:
   stage: build
   before_script:

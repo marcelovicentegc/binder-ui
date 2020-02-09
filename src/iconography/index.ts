@@ -1,7 +1,6 @@
 export { AboutIcon } from "./AboutIcon";
 export { AlphabeticalOrderIcon } from "./AlphabeticalOrderIcon";
 export { AlphabeticalOrderReverseIcon } from "./AlphabeticalOrderReverseIcon";
-export { AppleStoreIcon, StoreType } from "./AppleStoreIcon";
 export { ArrowDownIcon } from "./ArrowDownIcon";
 export { ArrowIcon } from "./ArrowIcon";
 export { BackArrowIcon } from "./BackArrowIcon";
@@ -15,7 +14,6 @@ export { EditBinderIcon } from "./EditBinderIcon";
 export { EditBinderThemeIcon } from "./EditBinderThemeIcon";
 export { EditUserIcon } from "./EditUserIcon";
 export { FileIcon } from "./FileIcon";
-export { GooglePlayIcon } from "./GooglePlayIcon";
 export { GradeIcon } from "./GradeIcon";
 export { MenuIcon } from "./MenuIcon";
 export { MoveIcon } from "./MoveIcon";

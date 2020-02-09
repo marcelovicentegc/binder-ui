@@ -11,6 +11,6 @@ describe("<Span /> test case", () => {
 
   test("matches snapshot", () => {
     const { getByText } = render(<Span>Hi, I'm Span</Span>);
-    expect(getByText("Hi, I'm H4")).toMatchSnapshot();
+    expect(getByText("Hi, I'm Span")).toMatchSnapshot();
   });
 });

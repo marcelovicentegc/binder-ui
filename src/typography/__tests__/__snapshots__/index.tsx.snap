@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Span /> test case matches snapshot 1`] = `
+.c0 {
+  font-family: IBM Plex Sans,sans-serif;
+  font-style: normal;
+  -webkit-letter-spacing: 0.6684448px;
+  -moz-letter-spacing: 0.6684448px;
+  -ms-letter-spacing: 0.6684448px;
+  letter-spacing: 0.6684448px;
+  color: #202020;
+}
+
+<span
+  class="c0"
+>
+  Hi, I'm Span
+</span>
+`;
