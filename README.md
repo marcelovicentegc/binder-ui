@@ -1,6 +1,6 @@
 # binder-ui
 
-[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://www.npmjs.com/package/@binder/ui) [![npm version](https://badge.fury.io/js/%40binder%2Fui.svg)](https://www.npmjs.com/package/@binder/ui)
+[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://binder-ui.netlify.com/) [![npm version](https://badge.fury.io/js/%40binder%2Fui.svg)](https://www.npmjs.com/package/@binder/ui)
 
 ## ⬆️ Directions
 
