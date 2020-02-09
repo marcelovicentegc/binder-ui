@@ -4,7 +4,8 @@ import { InputType } from ".";
 export const InputWrapper = styled.div<{ type: InputType }>`
   ${({ type, theme }) => {
     return `display: flex;
-          flex-direction: column;
+          flex-direction: row;
+          align-items: center;
           padding: 7.5px 0px;
           
           input {

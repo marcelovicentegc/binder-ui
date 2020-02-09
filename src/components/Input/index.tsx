@@ -16,7 +16,7 @@ interface IProps {
 export const Input = ({ label, inputProps, type }: IProps) => {
   return (
     <InputWrapper type={type}>
-      {label && (
+      {type && type !== InputType.primary && label && (
         <LabelWrapper>
           <Label2>{label}</Label2>
         </LabelWrapper>
