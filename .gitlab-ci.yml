@@ -44,7 +44,7 @@ Build Storybok:
 Deploy (NPM):
   stage: deploy
   dependencies:
-    - Build
+    - Build Lib
   only:
     - master
   script:
