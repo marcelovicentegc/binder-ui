@@ -1,6 +1,6 @@
 import React from "react";
 import { StyledButton, StyledButtonProps } from "./style";
-import { Span } from "../../typography";
+import { Label2 } from "../../typography";
 
 export enum ButtonType {
   primary = "primary",
@@ -41,7 +41,9 @@ export const Button = ({
       {...props}
     >
       {icon && icon}
-      {buttonType !== ButtonType.round && <Span {...labelProps}>{label}</Span>}
+      {buttonType !== ButtonType.round && (
+        <Label2 {...labelProps}>{label}</Label2>
+      )}
       {secondaryIcon && secondaryIcon}
     </StyledButton>
   );

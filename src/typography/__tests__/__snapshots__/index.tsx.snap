@@ -1,19 +1,175 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Span /> test case matches snapshot 1`] = `
+exports[`<H1 /> test case matches snapshot 1`] = `
 .c0 {
   font-family: IBM Plex Sans,sans-serif;
   font-style: normal;
-  -webkit-letter-spacing: 0.6684448px;
-  -moz-letter-spacing: 0.6684448px;
-  -ms-letter-spacing: 0.6684448px;
-  letter-spacing: 0.6684448px;
-  color: #202020;
+  font-weight: normal;
+  line-height: 140.62%;
+  -webkit-letter-spacing: -0.01em;
+  -moz-letter-spacing: -0.01em;
+  -ms-letter-spacing: -0.01em;
+  letter-spacing: -0.01em;
+  color: black;
+  font-weight: 600;
+  font-size: 40px;
 }
 
 <span
   class="c0"
 >
-  Hi, I'm Span
+  Hi, I'm H1
+</span>
+`;
+
+exports[`<H2 /> test case matches snapshot 1`] = `
+.c0 {
+  font-family: IBM Plex Sans,sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 140.62%;
+  -webkit-letter-spacing: -0.01em;
+  -moz-letter-spacing: -0.01em;
+  -ms-letter-spacing: -0.01em;
+  letter-spacing: -0.01em;
+  color: black;
+  font-size: 32px;
+}
+
+<span
+  class="c0"
+>
+  Hi, I'm H2
+</span>
+`;
+
+exports[`<H3 /> test case matches snapshot 1`] = `
+.c0 {
+  font-family: IBM Plex Sans,sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 140.62%;
+  -webkit-letter-spacing: -0.01em;
+  -moz-letter-spacing: -0.01em;
+  -ms-letter-spacing: -0.01em;
+  letter-spacing: -0.01em;
+  color: black;
+  font-size: 20px;
+  line-height: 125%;
+}
+
+<span
+  class="c0"
+>
+  Hi, I'm H3
+</span>
+`;
+
+exports[`<Label1 /> test case matches snapshot 1`] = `
+.c0 {
+  font-family: IBM Plex Sans,sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 140.62%;
+  -webkit-letter-spacing: -0.01em;
+  -moz-letter-spacing: -0.01em;
+  -ms-letter-spacing: -0.01em;
+  letter-spacing: -0.01em;
+  color: black;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+<span
+  class="c0"
+>
+  Hi, I'm Label1
+</span>
+`;
+
+exports[`<Label2 /> test case matches snapshot 1`] = `
+.c0 {
+  font-family: IBM Plex Sans,sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 140.62%;
+  -webkit-letter-spacing: -0.01em;
+  -moz-letter-spacing: -0.01em;
+  -ms-letter-spacing: -0.01em;
+  letter-spacing: -0.01em;
+  color: black;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+<span
+  class="c0"
+>
+  Hi, I'm Label2
+</span>
+`;
+
+exports[`<Spotlight /> test case matches snapshot 1`] = `
+.c0 {
+  font-family: IBM Plex Sans,sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 140.62%;
+  -webkit-letter-spacing: -0.01em;
+  -moz-letter-spacing: -0.01em;
+  -ms-letter-spacing: -0.01em;
+  letter-spacing: -0.01em;
+  color: black;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+<span
+  class="c0"
+>
+  Hi, I'm Spotlight
+</span>
+`;
+
+exports[`<Subtitle /> test case matches snapshot 1`] = `
+.c0 {
+  font-family: IBM Plex Sans,sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 140.62%;
+  -webkit-letter-spacing: -0.01em;
+  -moz-letter-spacing: -0.01em;
+  -ms-letter-spacing: -0.01em;
+  letter-spacing: -0.01em;
+  color: black;
+  font-size: 28px;
+}
+
+<span
+  class="c0"
+>
+  Hi, I'm Subtitle
+</span>
+`;
+
+exports[`<Title /> test case matches snapshot 1`] = `
+.c0 {
+  font-family: IBM Plex Sans,sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 140.62%;
+  -webkit-letter-spacing: -0.01em;
+  -moz-letter-spacing: -0.01em;
+  -ms-letter-spacing: -0.01em;
+  letter-spacing: -0.01em;
+  color: black;
+  font-weight: bold;
+  font-size: 44px;
+}
+
+<span
+  class="c0"
+>
+  Hi, I'm Title
 </span>
 `;

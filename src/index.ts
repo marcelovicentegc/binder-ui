@@ -40,7 +40,18 @@ export {
 } from "./iconography";
 
 //Typography
-export { Span } from "./typography";
+export {
+  Title,
+  Subtitle,
+  H1,
+  H2,
+  H3,
+  Label1,
+  Label2,
+  Spotlight,
+  BodyText,
+  Legend
+} from "./typography";
 
 // Theming
 export { ThemeProvider } from "styled-components";
