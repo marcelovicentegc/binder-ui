@@ -1,5 +1,6 @@
 import React from "react";
-import { InputWrapper, LabelWrapper, Label } from "./style";
+import { InputWrapper, LabelWrapper } from "./style";
+import { Label2 } from "../../typography";
 
 export enum InputType {
   primary = "primary",
@@ -9,7 +10,7 @@ export enum InputType {
 interface IProps {
   label?: string;
   type?: InputType;
-  inputProps: React.HTMLProps<HTMLInputElement>;
+  inputProps?: React.HTMLProps<HTMLInputElement>;
 }
 
 export const Input = ({ label, inputProps, type }: IProps) => {
@@ -17,7 +18,7 @@ export const Input = ({ label, inputProps, type }: IProps) => {
     <InputWrapper type={type}>
       {label && (
         <LabelWrapper>
-          <Label>{label}</Label>
+          <Label2>{label}</Label2>
         </LabelWrapper>
       )}
       <input {...inputProps} />
