@@ -7,7 +7,7 @@
 1. Clone this repo: `git clone https://github.com/marcelovicentegc/binder-ui.git`
 2. cd into it: `cd binder-ui`
 3. Install its dependencies (use npm): `npm i`
-4. Run the application: `npm run dev`
+4. Run the application: `npm start`
 
 ## 🚧 Contributing
 
