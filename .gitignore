@@ -1,0 +1,11 @@
+# Scripts
+dist
+lib
+node_modules
+yarn-error.log
+
+# Storybook
+storybook-static
+
+# Jest
+coverage

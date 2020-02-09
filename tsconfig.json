@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "outDir": "./lib",
+    "target": "es6",
+    "jsx": "react",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "declaration": true,
+    "downlevelIteration": true,
+    "removeComments": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "module": "es2015",
+    "lib": ["es5", "es6", "es7", "es2017", "dom"]
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules", "lib", "**/__tests__/**/*"]
+}

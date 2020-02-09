@@ -1,0 +1,40 @@
+image: node:12
+
+stages:
+  - check
+  - build
+  - test
+  - deploy
+
+Audit:
+  stage: check
+  before_script:
+    - npm ci
+  script:
+    - npm audit
+
+Static Test:
+  stage: check
+  before_script:
+    - npm ci
+  script:
+    - npm run check
+
+Build:
+  stage: build
+  before_script:
+    - npm ci
+  script:
+    - npm run build
+
+Deploy (NPM):
+  stage: deploy
+  dependencies:
+    - Build
+  only:
+    - master
+  script:
+    - echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > .npmrc
+    - npm ci
+    - npm run build
+    - npm publish --access public
