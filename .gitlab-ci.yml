@@ -27,12 +27,19 @@ Unit Test:
   script:
     - npm test
 
-Build:
+Build Lib:
   stage: build
   before_script:
     - npm ci
   script:
     - npm run build
+
+Build Storybok:
+  stage: build
+  before_script:
+    - npm ci
+  script:
+    - npm run build:storybook
 
 Deploy (NPM):
   stage: deploy

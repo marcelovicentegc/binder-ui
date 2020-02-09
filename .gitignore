@@ -5,7 +5,7 @@ node_modules
 yarn-error.log
 
 # Storybook
-storybook-static
+public
 
 # Jest
 coverage
