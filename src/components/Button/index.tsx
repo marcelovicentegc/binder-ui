@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledButton } from "./style";
+import { StyledButton, StyledButtonProps } from "./style";
 import { Span } from "../../typography";
 
 export enum ButtonType {
@@ -12,14 +12,14 @@ export enum ButtonType {
 
 interface IProps
   extends Omit<
-    React.DetailedHTMLProps<
-      React.ButtonHTMLAttributes<HTMLButtonElement>,
-      HTMLButtonElement
+      React.DetailedHTMLProps<
+        React.ButtonHTMLAttributes<HTMLButtonElement>,
+        HTMLButtonElement
+      >,
+      "ref" | "type"
     >,
-    "ref" | "type"
-  > {
+    Omit<StyledButtonProps, "withIcon" | "withSecondaryIcon"> {
   label: string;
-  buttonType?: ButtonType;
   icon?: React.ReactNode;
   secondaryIcon?: React.ReactNode;
   labelProps?: Omit<React.HTMLProps<HTMLSpanElement>, "ref" | "as">;

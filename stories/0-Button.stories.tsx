@@ -8,6 +8,7 @@ import {
   NewIcon,
   EditBinderIcon
 } from "../src";
+import { Mode } from "../src/utils/generics";
 
 const stories = storiesOf("Button", module);
 
@@ -21,6 +22,21 @@ stories.add(
     <Button
       label="Sign in"
       buttonType={ButtonType.primary}
+      onClick={() => alert("🚀🚀🚀🚀🚀🚀🚀")}
+    />
+  ),
+  {
+    info: { inline: true }
+  }
+);
+
+stories.add(
+  "primary and dark mode",
+  () => (
+    <Button
+      label="Sign in"
+      buttonType={ButtonType.primary}
+      mode={Mode.dark}
       onClick={() => alert("🚀🚀🚀🚀🚀🚀🚀")}
     />
   ),
@@ -44,10 +60,25 @@ stories.add(
 );
 
 stories.add(
+  "secondary and dark mode",
+  () => (
+    <Button
+      label="Skip introduction"
+      buttonType={ButtonType.secondary}
+      mode={Mode.dark}
+      onClick={() => alert("🚀🚀🚀🚀🚀🚀🚀")}
+    />
+  ),
+  {
+    info: { inline: true }
+  }
+);
+
+stories.add(
   "tertiary",
   () => (
     <Button
-      label="New binder"
+      label="Cancel"
       buttonType={ButtonType.tertiary}
       onClick={() => alert("🚀🚀🚀🚀🚀🚀🚀")}
     />
@@ -116,12 +147,12 @@ stories.add(
 );
 
 stories.add(
-  "tertiary with secondary icon",
+  "secondary with secondary icon",
   () => (
     <Button
       label="Edit"
       secondaryIcon={<EditBinderIcon />}
-      buttonType={ButtonType.primary}
+      buttonType={ButtonType.secondary}
       onClick={() => alert("🚀🚀🚀🚀🚀🚀🚀")}
     />
   ),

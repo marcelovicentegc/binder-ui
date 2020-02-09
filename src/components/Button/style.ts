@@ -1,29 +1,30 @@
 import { styled } from "../../utils/Theme";
 import { ButtonType } from ".";
+import { Mode } from "../../utils/generics";
 
 export interface StyledButtonProps {
   withIcon?: boolean;
   withSecondaryIcon?: boolean;
   buttonType?: ButtonType;
+  mode?: Mode;
 }
 
 const StyledButtonBase = styled.button`
   ${({ theme }) => {
     return `
+    backdrop-filter: blur(22px);
+    border: none;
+    background-color: ${theme.color.gray10};
+    opacity: 0.95;
     border-radius: 28px;
-    backdrop-filter: unset;
-    opacity: unset;
-    border: solid 2px ${theme.color.gray2};
     height: 39px;
     width: auto;
     padding: 0px 16px;
-    background: white;
     cursor: pointer;
     transition: .2s;
     outline: none;
 
     &:hover {
-      backdrop-filter: unset;
       background: ${theme.color.white2};
     }
     
@@ -42,10 +43,10 @@ const StyledButtonBase = styled.button`
 `;
 
 export const StyledButton = styled(StyledButtonBase)<StyledButtonProps>`
-  ${({ theme, withIcon, withSecondaryIcon, buttonType }) => {
+  ${({ theme, withIcon, withSecondaryIcon, buttonType, mode }) => {
     return `      
     ${
-      buttonType === ButtonType.secondary
+      buttonType === ButtonType.primary && mode === Mode.dark
         ? `
       background: ${theme.color.black2};
       border-color: ${theme.color.gray7};
@@ -62,18 +63,57 @@ export const StyledButton = styled(StyledButtonBase)<StyledButtonProps>`
     }
 
     ${
-      buttonType === ButtonType.tertiary
-        ? `backdrop-filter: blur(22px);
-      border: none;
-      background-color: ${theme.color.gray10};
-      opacity: 0.95;`
+      buttonType === ButtonType.secondary
+        ? `backdrop-filter: blur(2px);
+    border: 2px solid ${theme.color.gray2};
+    background: white;
+    
+    &:hover {
+      background: none;
+      box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.15);
+    }`
         : ""
     }
-  
+
+    ${
+      buttonType === ButtonType.secondary && mode === Mode.dark
+        ? `backdrop-filter: blur(2px);
+        border: 2px solid ${theme.color.gray7};
+        background: ${theme.color.black2};
+
+        span {
+          color: ${theme.color.gray8};
+        }
+
+        &:hover { 
+          background: ${theme.color.black2};
+          box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.15);
+        }
+    `
+        : ""
+    }
+
+    ${
+      buttonType === ButtonType.tertiary
+        ? `border: none;
+      background: none;
+
+      &:hover {
+        background: none;
+      }
+
+      span {
+        line-height: 140.62%;
+      }
+  `
+        : ""
+    } 
+
     ${
       buttonType === ButtonType.quaternary
         ? `text-decoration: underline;
       border: none;
+      background: none;
 
     &:hover {
       background: none;
