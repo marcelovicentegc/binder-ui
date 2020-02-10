@@ -1,25 +1,28 @@
 import React from "react";
+import { MenuWrapper, StyledMenu, TitleWrapper } from "./style";
+import { BodyText } from "../../typography";
+import { Separator } from "../Separator";
+import { ArrowIcon } from "../../iconography";
 
-type MenuMode = "title" | "section" | "withArrow";
+type TMenuMode = "section" | "withArrow";
 
-export interface IMenuItemsProps {
+export interface MenuItemsProps {
   checkGreen?: boolean;
   checkBlack?: boolean;
   icon: React.ReactNode;
-  mode?: MenuMode | MenuMode[];
+  mode?: TMenuMode | TMenuMode[];
   onClick?: () => void;
   title: string;
   descriptions?: React.ReactNode[];
 }
 
-interface IProps {
-  menuItems: IMenuItemsProps[];
+export interface MenuProps {
+  menuItems: MenuItemsProps[];
   menuIconProps?: React.SVGProps<SVGSVGElement>;
   topSpace: number;
   rightSpace: number;
   showMenu: boolean;
   rightAsLeft?: boolean;
-  className?: string;
 }
 
 export const Menu = ({
@@ -27,33 +30,47 @@ export const Menu = ({
   topSpace,
   rightSpace,
   showMenu,
-  className,
   rightAsLeft
-}: IProps) => {
+}: MenuProps) => {
+  const getMenuItemMode = (mode: TMenuMode | null) => {
+    switch (mode) {
+      case "section":
+        return <Separator />;
+      case "withArrow":
+        return <ArrowIcon width={15} />;
+      default:
+        return;
+    }
+  };
+
   return (
-    <section>
+    <MenuWrapper>
       {showMenu && (
-        <nav
-          style={{
-            top: topSpace,
-            right: !rightAsLeft && rightSpace,
-            left: rightAsLeft && rightSpace
-          }}
-          className={className}
+        <StyledMenu
+          topSpace={topSpace}
+          right={!rightAsLeft && rightSpace}
+          left={rightAsLeft && rightSpace}
         >
           <ul>
             {menuItems.map((menuItem, index) => (
-              <li key={index}>
+              <li key={index} onClick={menuItem.onClick}>
                 {menuItem.icon}
-                <a onClick={menuItem.onClick}>{menuItem.title}</a>
+                <TitleWrapper direction={"column"}>
+                  <BodyText>{menuItem.title} </BodyText>
+                  {Array.isArray(menuItem.mode)
+                    ? menuItem.mode.map(mode => {
+                        return getMenuItemMode(mode);
+                      })
+                    : getMenuItemMode(menuItem.mode)}
+                </TitleWrapper>
                 {menuItem.descriptions?.map((description, index) => (
                   <span key={index}>{description}</span>
                 ))}
               </li>
             ))}
           </ul>
-        </nav>
+        </StyledMenu>
       )}
-    </section>
+    </MenuWrapper>
   );
 };
