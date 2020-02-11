@@ -3,6 +3,7 @@ import { storiesOf } from "@storybook/react";
 import {
   Button,
   ButtonType,
+  ButtonSize,
   ArrowIcon,
   BackArrowIcon,
   NewIcon,
@@ -66,6 +67,21 @@ stories.add(
       label="Skip introduction"
       buttonType={ButtonType.secondary}
       mode={Mode.dark}
+      onClick={() => alert("🚀🚀🚀🚀🚀🚀🚀")}
+    />
+  ),
+  {
+    info: { inline: true }
+  }
+);
+
+stories.add(
+  "secondary and small",
+  () => (
+    <Button
+      label="Skip introduction"
+      buttonType={ButtonType.secondary}
+      buttonSize={ButtonSize.small}
       onClick={() => alert("🚀🚀🚀🚀🚀🚀🚀")}
     />
   ),

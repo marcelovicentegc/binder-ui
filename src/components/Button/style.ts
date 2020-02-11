@@ -1,11 +1,12 @@
 import { styled } from "../../utils/Theme";
-import { ButtonType } from ".";
+import { ButtonType, ButtonSize } from ".";
 import { Mode } from "../../utils/generics";
 
 export interface StyledButtonProps {
   withIcon?: boolean;
   withSecondaryIcon?: boolean;
   buttonType?: ButtonType;
+  buttonSize?: ButtonSize;
   mode?: Mode;
 }
 
@@ -43,8 +44,10 @@ const StyledButtonBase = styled.button`
 `;
 
 export const StyledButton = styled(StyledButtonBase)<StyledButtonProps>`
-  ${({ theme, withIcon, withSecondaryIcon, buttonType, mode }) => {
-    return `      
+  ${({ theme, withIcon, withSecondaryIcon, buttonType, mode, buttonSize }) => {
+    return ` 
+    ${buttonSize === ButtonSize.small ? "height: 31px" : ""}
+    
     ${
       buttonType === ButtonType.primary && mode === Mode.dark
         ? `

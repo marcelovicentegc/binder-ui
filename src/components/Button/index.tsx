@@ -10,6 +10,11 @@ export enum ButtonType {
   round = "round"
 }
 
+export enum ButtonSize {
+  small = "small",
+  regular = "regular"
+}
+
 interface IProps
   extends Omit<
       React.DetailedHTMLProps<
