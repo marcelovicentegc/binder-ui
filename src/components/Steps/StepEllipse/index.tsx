@@ -7,11 +7,24 @@ interface IProps
       React.HTMLAttributes<HTMLDivElement>,
       HTMLDivElement
     >,
-    "ref"
+    "ref" | "onClick"
   > {
   isCurrentStep?: boolean;
+  currentStepValue: number;
+  onClick: (value: number) => void;
 }
 
-export const StepEllipse = (props: IProps) => {
-  return <StyledStepEllipse isCurrentStep={!!props.isCurrentStep} {...props} />;
+export const StepEllipse = ({
+  isCurrentStep,
+  onClick,
+  currentStepValue,
+  ...props
+}: IProps) => {
+  return (
+    <StyledStepEllipse
+      isCurrentStep={!!isCurrentStep}
+      onClick={() => onClick(currentStepValue)}
+      {...props}
+    />
+  );
 };

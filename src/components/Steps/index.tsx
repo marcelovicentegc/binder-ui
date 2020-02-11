@@ -7,19 +7,17 @@ import { StepsWrapper } from "./style";
 interface IProps {
   totalSteps: number;
   currentStep: number;
-  setCurrentStep: () => void;
+  setCurrentStep: (currentStep: number) => void;
 }
 
 export const Steps = observer((props: IProps) => {
   const getSteps = () => {
-    // The subtraction operation to create this array and the
-    // following additions to the map's index were made to
-    // ignore the "splash" and the "skip" steps
-    return [...new Array(props.totalSteps - 2)].map((_, i) => (
+    return [...new Array(props.totalSteps)].map((_, i) => (
       <StepEllipse
         isCurrentStep={props.currentStep === i + 1}
         key={generateKey(20)}
-        onClick={() => props.setCurrentStep()}
+        currentStepValue={i + 1}
+        onClick={currentStepValue => props.setCurrentStep(currentStepValue)}
       />
     ));
   };
