@@ -3,6 +3,7 @@ export { Input, InputType } from "./components/Input";
 export { Steps } from "./components/Steps";
 export { Button, ButtonType, ButtonSize } from "./components/Button";
 export { Menu, MenuItemsProps } from "./components/Menu";
+export { SearchBar } from "./components/SearchBar";
 
 // Icons
 export {
