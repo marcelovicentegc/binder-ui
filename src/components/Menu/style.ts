@@ -29,8 +29,14 @@ export const StyledMenu = styled.nav<
     align-items: center;
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 12px;
+    margin: -12px -20px 12px -20px;
+    padding: 12px 20px 0px 20px;
     cursor: pointer;
+    transition: .2s;
+
+    &:hover {
+      background-color: #F5F5F5;
+    }
 
     span {
       border-bottom: 1px solid rgba(0, 0, 0, 0.3);
