@@ -51,6 +51,7 @@ export {
 //Typography
 export {
   Title,
+  Title2,
   Subtitle,
   H1,
   H2,
@@ -59,8 +60,7 @@ export {
   Label2,
   Spotlight,
   BodyText,
-  Legend,
-  BinderTitle
+  Legend
 } from "./typography";
 
 // Theming

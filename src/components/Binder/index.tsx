@@ -2,7 +2,7 @@ import React from "react";
 import { CustomContext } from "../CustomContext";
 import { MenuItemsProps } from "../Menu";
 import { FigureWrapper, Figure, FigCaption, Image } from "./style";
-import { BinderTitle, Subtitle } from "../../typography";
+import { Title2, Subtitle } from "../../typography";
 
 export enum BinderSize {
   small = "339px",
@@ -96,9 +96,9 @@ export const Binder = ({
           />
         )}
         <FigCaption disabled={disabled}>
-          <BinderTitle ref={spanRef} color={binder.title.color}>
+          <Title2 ref={spanRef} color={binder.title.color}>
             {binder.title.text}
-          </BinderTitle>
+          </Title2>
           <Subtitle color={binder.desc?.color}>{binder.desc?.text}</Subtitle>
         </FigCaption>
       </Figure>

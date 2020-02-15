@@ -13,6 +13,7 @@ import {
 import { BinderInterface } from "../components/Binder";
 import ancientHistoryBg from "../assets/ancientHistoryBg.png";
 import naturalSciencesBg from "../assets/naturalSciencesBg.png";
+import geometryBg from "../assets/geometryBg.png";
 import { theme } from "../utils/Theme";
 
 export const onClick = () => alert("🚀🚀🚀🚀🚀🚀🚀");
@@ -78,13 +79,46 @@ export const contextMenuItems: MenuItemsProps[] = [
   }
 ];
 
-export const binder: BinderInterface = {
+export const philosophyBinder: BinderInterface = {
   key: "5",
   img: "",
   title: { color: theme.color.yellow2, text: "Philosophy" },
   desc: { color: theme.color.white3, text: "Hermeneutics" },
   backgroundColor: theme.color.purple1,
-  date: new Date(2020, 1, 3)
+  date: new Date(2020, 1, 3),
+  boards: [
+    {
+      key: "1",
+      date: new Date(2020, 1, 2),
+      title: "Hermeneutics of oneself",
+      snapshot: ""
+    },
+    {
+      key: "2",
+      date: new Date(2020, 1, 1),
+      title: "Interpretation theory",
+      snapshot: "",
+      sharedWith: ["João", "Maria", "Isidoro"],
+      lastUpdatedAt: "última atualização ontem, às 21:38, por você"
+    },
+    {
+      key: "3",
+      date: new Date(2020, 1, 13),
+      title: "Life and work of Heidegger",
+      snapshot: "",
+      sharedWith: ["Luíza"],
+      lastUpdatedAt: "última atualização ontem, às 11:05, por Luíza"
+    }
+  ]
+};
+
+export const planeGeometryBinder: BinderInterface = {
+  key: "3",
+  img: geometryBg,
+  backgroundColor: theme.color.green6,
+  title: { color: theme.color.yellow5, text: "Geometry" },
+  desc: { color: "#fff", text: "Plane geometry" },
+  date: new Date(2019, 1, 11)
 };
 
 export const binders: BinderInterface[] = [
@@ -102,48 +136,12 @@ export const binders: BinderInterface[] = [
     desc: { color: "#c94129", text: "Ancient history" },
     date: new Date(2020, 1, 11)
   },
-  {
-    key: "3",
-    img: "",
-    title: { color: "#fff", text: "Geometry" },
-    desc: { color: "#fff", text: "Plane geometry" },
-    date: new Date(2019, 1, 11)
-  },
+  planeGeometryBinder,
   {
     key: "4",
     img: "",
     title: { color: "#fff", text: "Phsyical geography" },
     date: new Date(2020, 1, 8)
   },
-  {
-    key: "5",
-    img: "",
-    title: { color: theme.color.yellow2, text: "Philosophy" },
-    desc: { color: theme.color.white3, text: "Hermeneutics" },
-    date: new Date(2020, 1, 3),
-    boards: [
-      {
-        key: "1",
-        date: new Date(2020, 1, 2),
-        title: "Hermeneutics of oneself",
-        snapshot: ""
-      },
-      {
-        key: "2",
-        date: new Date(2020, 1, 1),
-        title: "Interpretation theory",
-        snapshot: "",
-        sharedWith: ["João", "Maria", "Isidoro"],
-        lastUpdatedAt: "última atualização ontem, às 21:38, por você"
-      },
-      {
-        key: "3",
-        date: new Date(2020, 1, 13),
-        title: "Life and work of Heidegger",
-        snapshot: "",
-        sharedWith: ["Luíza"],
-        lastUpdatedAt: "última atualização ontem, às 11:05, por Luíza"
-      }
-    ]
-  }
+  philosophyBinder
 ];

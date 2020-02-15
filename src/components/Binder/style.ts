@@ -46,6 +46,8 @@ export const Image = styled.img<{ disabled?: boolean }>`
   border-bottom-right-radius: 13px;
   border-top-right-radius: 13px;
   width: 100%;
+  position: absolute;
+  top: 0;
   ${({ disabled }) => `cursor: ${disabled ? "default" : "pointer"};`}
 `;
 

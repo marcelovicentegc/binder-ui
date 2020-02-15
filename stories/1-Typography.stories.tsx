@@ -1,10 +1,24 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { Title, Subtitle, H1, H2, H3, Label1, Label2, Spotlight } from "../src";
+import {
+  Title,
+  Title2,
+  Subtitle,
+  H1,
+  H2,
+  H3,
+  Label1,
+  Label2,
+  Spotlight
+} from "../src";
 
 const stories = storiesOf("Typography", module);
 
 stories.add("Title", () => <Title>Hello world!</Title>, {
+  info: { inline: true }
+});
+
+stories.add("Title2", () => <Title2>Hello world!</Title2>, {
   info: { inline: true }
 });
 

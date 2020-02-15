@@ -1,7 +1,12 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { Binder, BinderSize } from "../src";
-import { binder, contextMenuItems, onClick } from "../src/mocks";
+import {
+  contextMenuItems,
+  onClick,
+  philosophyBinder,
+  planeGeometryBinder
+} from "../src/mocks";
 
 const stories = storiesOf("Binder", module);
 
@@ -10,7 +15,7 @@ stories.add(
   () => {
     return (
       <Binder
-        binder={binder}
+        binder={planeGeometryBinder}
         contextMenu={contextMenuItems}
         onClick={onClick}
       />
@@ -26,7 +31,7 @@ stories.add(
   () => {
     return (
       <Binder
-        binder={binder}
+        binder={philosophyBinder}
         contextMenu={contextMenuItems}
         onClick={onClick}
         size={BinderSize.medium}

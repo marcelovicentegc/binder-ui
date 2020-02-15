@@ -1,7 +1,18 @@
 import React from "react";
 import "@testing-library/jest-dom/extend-expect";
 import { render } from "../../utils/render";
-import { Title, Subtitle, H1, H2, H3, Label1, Label2, Spotlight } from "..";
+import {
+  Title,
+  Title2,
+  Subtitle,
+  H1,
+  H2,
+  H3,
+  Label1,
+  Label2,
+  Spotlight
+} from "..";
+import { theme } from "../../utils/Theme";
 
 describe("<Title /> test case", () => {
   test("renders text", () => {
@@ -15,6 +26,25 @@ describe("<Title /> test case", () => {
   });
 });
 
+describe("<Title2 /> test case", () => {
+  test("renders text", () => {
+    const { getByText } = render(<Title2>Hi, I'm Title2</Title2>);
+    expect(getByText("Hi, I'm Title2")).toBeInTheDocument();
+  });
+
+  test("matches snapshot", () => {
+    const { getByText } = render(<Title2>Hi, I'm Title2</Title2>);
+    expect(getByText("Hi, I'm Title2")).toMatchSnapshot();
+  });
+
+  test("matches snapshot when color is passed via props", () => {
+    const { getByText } = render(
+      <Title2 color={theme.color.red4}>Hi, I'm Title2</Title2>
+    );
+    expect(getByText("Hi, I'm Title2")).toMatchSnapshot();
+  });
+});
+
 describe("<Subtitle /> test case", () => {
   test("renders text", () => {
     const { getByText } = render(<Subtitle>Hi, I'm Subtitle</Subtitle>);
@@ -23,6 +53,13 @@ describe("<Subtitle /> test case", () => {
 
   test("matches snapshot", () => {
     const { getByText } = render(<Subtitle>Hi, I'm Subtitle</Subtitle>);
+    expect(getByText("Hi, I'm Subtitle")).toMatchSnapshot();
+  });
+
+  test("matches snapshot when color is passed via props", () => {
+    const { getByText } = render(
+      <Subtitle color={theme.color.red2}>Hi, I'm Subtitle</Subtitle>
+    );
     expect(getByText("Hi, I'm Subtitle")).toMatchSnapshot();
   });
 });
