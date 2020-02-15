@@ -1,10 +1,10 @@
 import { styled } from "../../utils/Theme";
 
 export const MenuContext = styled.div`
-  div {
+  nav {
     ul {
       li {
-        flex-wrap: unset;
+        flex-wrap: unset !important;
       }
     }
   }

@@ -15,9 +15,8 @@ export const StyledMenu = styled.nav<
   position: absolute;
   width: max-content;
   z-index: 2;
-  backdrop-filter: blur(30px);
   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.3);
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255);
 
   ul {
     list-style-type: none;
