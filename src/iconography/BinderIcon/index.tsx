@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 export const BinderIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
   return (
@@ -8,6 +8,7 @@ export const BinderIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
       viewBox="0 0 91 61"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      data-testid="binderIcon"
       {...props}
     >
       <path
@@ -15,5 +16,5 @@ export const BinderIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
         fill="black"
       />
     </svg>
-  )
-}
+  );
+};

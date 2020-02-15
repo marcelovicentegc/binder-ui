@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 export const AlphabeticalOrderReverseIcon: React.SFC<React.SVGProps<
   SVGSVGElement
@@ -10,6 +10,8 @@ export const AlphabeticalOrderReverseIcon: React.SFC<React.SVGProps<
       height="32"
       viewBox="0 0 32 32"
       fill="none"
+      data-testid="alphabeticalOrderReverseIcon"
+      {...props}
     >
       <path
         d="M21.0271 7.46728L15 13.4501L16.4677 14.907L21.4538 9.95752V24H23.5357V9.95752L28.5323 14.907L30 13.4501L23.5357 7.0333L22.4948 6L21.0271 7.46728Z"
@@ -24,5 +26,5 @@ export const AlphabeticalOrderReverseIcon: React.SFC<React.SVGProps<
         fill="black"
       />
     </svg>
-  )
-}
+  );
+};

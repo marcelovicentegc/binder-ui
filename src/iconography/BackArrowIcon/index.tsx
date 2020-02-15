@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 export const BackArrowIcon: React.SFC<React.SVGProps<
   SVGSVGElement
@@ -10,6 +10,7 @@ export const BackArrowIcon: React.SFC<React.SVGProps<
       viewBox="0 0 9 14"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      data-testid="backArrowIcon"
       {...props}
     >
       <path
@@ -19,5 +20,5 @@ export const BackArrowIcon: React.SFC<React.SVGProps<
         fill="black"
       />
     </svg>
-  )
-}
+  );
+};

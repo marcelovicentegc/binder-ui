@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 export const DoorIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
   return (
@@ -8,6 +8,8 @@ export const DoorIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
       height="32"
       viewBox="0 0 32 32"
       fill="none"
+      data-testid="doorIcon"
+      {...props}
     >
       <path d="M25 6V26H16V6H25ZM27 4H14V28H27V4Z" fill="black" />
       <path d="M6 27.12V4.88001L19 3.14001V28.86L6 27.12Z" fill="white" />
@@ -17,5 +19,5 @@ export const DoorIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
       />
       <path d="M17 14H15V17H17V14Z" fill="black" />
     </svg>
-  )
-}
+  );
+};

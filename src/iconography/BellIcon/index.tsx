@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 export const BellIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
   return (
@@ -8,6 +8,8 @@ export const BellIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
       height="32"
       viewBox="0 0 32 32"
       fill="none"
+      data-testid="bellIcon"
+      {...props}
     >
       <path
         d="M18.72 27C18.17 27.61 17.38 28 16.5 28C15.62 28 14.83 27.61 14.28 27H11.92C12.69 28.76 14.45 30 16.5 30C18.55 30 20.31 28.76 21.08 27H18.72Z"
@@ -72,5 +74,5 @@ export const BellIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
         fill="black"
       />
     </svg>
-  )
-}
+  );
+};

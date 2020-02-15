@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 export const ArrowDownIcon: React.SFC<React.SVGProps<
   SVGSVGElement
@@ -10,6 +10,7 @@ export const ArrowDownIcon: React.SFC<React.SVGProps<
       viewBox="0 0 14 9"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      data-testid="arrowDownIcon"
       {...props}
     >
       <path
@@ -19,5 +20,5 @@ export const ArrowDownIcon: React.SFC<React.SVGProps<
         fill="black"
       />
     </svg>
-  )
-}
+  );
+};
