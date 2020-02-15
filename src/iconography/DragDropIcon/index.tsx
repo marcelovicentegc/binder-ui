@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 export const DragDropIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
   return (
@@ -8,6 +8,8 @@ export const DragDropIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
       height="32"
       viewBox="0 0 32 32"
       fill="none"
+      data-testid="dragDropIcon"
+      {...props}
     >
       <g clipPath="url(#clip0)">
         <path
@@ -31,5 +33,5 @@ export const DragDropIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
         </clipPath>
       </defs>
     </svg>
-  )
-}
+  );
+};

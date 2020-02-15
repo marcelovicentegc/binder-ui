@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 export const MenuIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
   return (
@@ -8,6 +8,7 @@ export const MenuIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
       x="0px"
       y="0px"
       viewBox="0 0 60 60"
+      data-testid="menuIcon"
       {...props}
     >
       <g>
@@ -25,5 +26,5 @@ export const MenuIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
         />
       </g>
     </svg>
-  )
-}
+  );
+};

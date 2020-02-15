@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 export const EditBinderIcon: React.SFC<React.SVGProps<
   SVGSVGElement
@@ -10,6 +10,7 @@ export const EditBinderIcon: React.SFC<React.SVGProps<
       viewBox="0 0 32 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      data-testid="editBinderIcon"
       {...props}
     >
       <g clipPath="url(#clip0)">
@@ -63,5 +64,5 @@ export const EditBinderIcon: React.SFC<React.SVGProps<
         </clipPath>
       </defs>
     </svg>
-  )
-}
+  );
+};

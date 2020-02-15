@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 export const SuccessArrowIcon: React.SFC<React.SVGProps<
   SVGSVGElement
@@ -10,6 +10,7 @@ export const SuccessArrowIcon: React.SFC<React.SVGProps<
       viewBox="0 0 13 10"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      data-testid="successArrowIcon"
       {...props}
     >
       <path
@@ -19,5 +20,5 @@ export const SuccessArrowIcon: React.SFC<React.SVGProps<
         fill={props.color ? props.color : "#3E933A"}
       />
     </svg>
-  )
-}
+  );
+};

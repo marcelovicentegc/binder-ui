@@ -1,10 +1,17 @@
-import React from "react"
+import React from "react";
 
 export const SideBySideIcon: React.SFC<React.SVGProps<
   SVGSVGElement
 >> = props => {
   return (
-    <svg viewBox="0 0 28 28" fill="none" width="32" height="32">
+    <svg
+      viewBox="0 0 28 28"
+      fill="none"
+      width="32"
+      height="32"
+      data-testid="sideBySideIcon"
+      {...props}
+    >
       <path
         d="M0 1H12V27H0"
         stroke="black"
@@ -20,5 +27,5 @@ export const SideBySideIcon: React.SFC<React.SVGProps<
         fill={props.color ? props.color : "#33333"}
       />
     </svg>
-  )
-}
+  );
+};

@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 export const TrashIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
   return (
@@ -8,6 +8,7 @@ export const TrashIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
       viewBox="0 0 32 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      data-testid="trashIcon"
       {...props}
     >
       <path
@@ -31,5 +32,5 @@ export const TrashIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
       />
       <path d="M19 5V7H13V5H19ZM21 3H11V9H21V3Z" fill="#D86C30" />
     </svg>
-  )
-}
+  );
+};

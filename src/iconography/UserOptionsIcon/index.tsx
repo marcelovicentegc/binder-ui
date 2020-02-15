@@ -1,10 +1,18 @@
-import React from "react"
+import React from "react";
 
 export const UserOptionsIcon: React.SFC<React.SVGProps<
   SVGSVGElement
 >> = props => {
   return (
-    <svg version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512">
+    <svg
+      version="1.1"
+      id="Capa_1"
+      x="0px"
+      y="0px"
+      viewBox="0 0 512 512"
+      data-testid="userOptionsIcon"
+      {...props}
+    >
       <g>
         <g>
           <polygon
@@ -22,5 +30,5 @@ export const UserOptionsIcon: React.SFC<React.SVGProps<
         </g>
       </g>
     </svg>
-  )
-}
+  );
+};

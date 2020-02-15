@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 export const EditBinderThemeIcon: React.SFC<React.SVGProps<
   SVGSVGElement
@@ -10,6 +10,7 @@ export const EditBinderThemeIcon: React.SFC<React.SVGProps<
       viewBox="0 0 32 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      data-testid="editBinderThemeIcon"
       {...props}
     >
       <path d="M18 11H9V13H18V11Z" fill="#262626" />
@@ -19,5 +20,5 @@ export const EditBinderThemeIcon: React.SFC<React.SVGProps<
         fill="#262626"
       />
     </svg>
-  )
-}
+  );
+};

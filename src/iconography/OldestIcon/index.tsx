@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 export const OldestIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
   return (
@@ -8,6 +8,8 @@ export const OldestIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
       height="32"
       viewBox="0 0 32 32"
       fill="none"
+      data-testid="oldestIcon"
+      {...props}
     >
       <g clipPath="url(#clip0)">
         <path
@@ -29,5 +31,5 @@ export const OldestIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
         </clipPath>
       </defs>
     </svg>
-  )
-}
+  );
+};

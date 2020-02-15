@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 export const ShareIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
   return (
@@ -8,6 +8,7 @@ export const ShareIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
       viewBox="0 0 32 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      data-testid="shareIcon"
       {...props}
     >
       <path
@@ -35,5 +36,5 @@ export const ShareIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
         fill="#333333"
       />
     </svg>
-  )
-}
+  );
+};

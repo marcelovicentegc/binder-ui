@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 export const SearchIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
   return (
@@ -8,6 +8,7 @@ export const SearchIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
       viewBox="0 0 32 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      data-testid="searchIcon"
       {...props}
     >
       <path
@@ -23,5 +24,5 @@ export const SearchIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
         fill={props.color ? props.color : "#EAB634"}
       />
     </svg>
-  )
-}
+  );
+};

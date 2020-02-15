@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 export const XIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
   return (
@@ -8,6 +8,7 @@ export const XIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      data-testid="xIcon"
       {...props}
     >
       <path
@@ -17,5 +18,5 @@ export const XIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
         fill="#4C4C4C"
       />
     </svg>
-  )
-}
+  );
+};

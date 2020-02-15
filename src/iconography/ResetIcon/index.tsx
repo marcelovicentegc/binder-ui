@@ -1,17 +1,14 @@
-import React from "react"
+import React from "react";
 
-interface IProps {
-  onClick?: () => void
-}
-
-export const ResetIcon = ({ onClick }: IProps) => {
+export const ResetIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
   return (
     <svg
       version="1.1"
       x="0px"
       y="0px"
       viewBox="0 0 426.667 426.667"
-      onClick={onClick}
+      data-testid="resetIcon"
+      {...props}
     >
       <g>
         <g>
@@ -19,5 +16,5 @@ export const ResetIcon = ({ onClick }: IProps) => {
         </g>
       </g>
     </svg>
-  )
-}
+  );
+};

@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 export const FileIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
   return (
@@ -8,6 +8,7 @@ export const FileIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
       viewBox="0 0 32 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      data-testid="fileIcon"
       {...props}
     >
       <path d="M23 13V25H9V13H23ZM25 11H7V27H25V11Z" fill="#479DBF" />
@@ -19,5 +20,5 @@ export const FileIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
         fill="#262626"
       />
     </svg>
-  )
-}
+  );
+};
