@@ -1,11 +1,18 @@
-// React components
-export { Input, InputType } from "./components/Input";
-export { Steps } from "./components/Steps";
-export { Button, ButtonType, ButtonSize } from "./components/Button";
-export { Menu, MenuItemsProps } from "./components/Menu";
-export { SearchBar } from "./components/SearchBar";
+export {
+  Input,
+  InputType,
+  Steps,
+  Button,
+  ButtonType,
+  ButtonSize,
+  Menu,
+  MenuItemsProps,
+  SearchBar,
+  Binder,
+  BinderSize,
+  CustomContext
+} from "./components";
 
-// Icons
 export {
   AboutIcon,
   AlphabeticalOrderIcon,
@@ -52,7 +59,8 @@ export {
   Label2,
   Spotlight,
   BodyText,
-  Legend
+  Legend,
+  BinderTitle
 } from "./typography";
 
 // Theming

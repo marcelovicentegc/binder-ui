@@ -143,6 +143,7 @@ exports[`<Subtitle /> test case matches snapshot 1`] = `
   letter-spacing: -0.01em;
   color: black;
   font-size: 28px;
+  color: black;
 }
 
 <span

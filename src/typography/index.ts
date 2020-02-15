@@ -15,8 +15,9 @@ export const Title = styled(Base)`
   font-size: 44px;
 `;
 
-export const Subtitle = styled(Base)`
+export const Subtitle = styled(Base)<{ color?: string }>`
   font-size: 28px;
+  color: ${({ color }) => (color ? color : "black")};
 `;
 
 export const H1 = styled(Base)`
@@ -55,4 +56,10 @@ export const BodyText = styled(Base)`
 
 export const Legend = styled(Base)`
   font-size: 14px;
+`;
+
+export const BinderTitle = styled(Base)<{ color?: string }>`
+  font-weight: bold;
+  font-size: 36px;
+  color: ${({ color }) => (color ? color : "black")};
 `;

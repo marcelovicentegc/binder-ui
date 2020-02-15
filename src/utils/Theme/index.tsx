@@ -10,6 +10,7 @@ export const theme = {
     black2: "#2B2B2B",
     white1: "#F7F7F7",
     white2: "#DCDDE0", // TODO: move to grey
+    white3: "#F5F5F5",
     gray1: "#E9E9E9",
     gray2: "#C4C4C4",
     gray3: "#999999",
@@ -43,6 +44,7 @@ export const theme = {
     blue3: "#479DBF",
     blue4: "#3584AF",
     blue5: "#12538F",
+    purple1: "#5A4D80",
     rainbowColors: [
       "#CC0000",
       "#F06D00",
