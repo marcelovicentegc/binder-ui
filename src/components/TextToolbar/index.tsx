@@ -20,10 +20,22 @@ import { ArrowUpIcon } from "../../iconography/ArrowUpIcon";
 import { CirclePicker } from "react-color";
 import { TextBoxStyleCardContent, StrokeType } from "./TextBoxStyleCardContent";
 
+interface ScopeInterface {
+  [key: string]: string;
+}
+
 interface TextToolbarProps {
   bodyText?: {
     label: string;
     options: string[];
+  };
+  textStyle?: {
+    menuTitle: string;
+    scopes: ScopeInterface[];
+    options: {
+      scope: keyof ScopeInterface[];
+      fontFamily: string;
+    };
   };
   textColor?: {
     menuTitle: string;
@@ -38,6 +50,7 @@ interface TextToolbarProps {
 
 export const TextToolbar: React.FC<TextToolbarProps> = ({
   bodyText,
+  textStyle,
   textColor,
   textBoxColor,
   textBoxStyle
@@ -50,6 +63,13 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
     currentTypographySetting,
     setCurrentTypographySetting
   ] = React.useState(3);
+  const [
+    displayTextStyleSettings,
+    setDisplayTextStyleSettings
+  ] = React.useState(false);
+  const [currentTextStyleSetting, setCurrentTextStyleSetting] = React.useState(
+    ""
+  );
   const [
     displayTextColorSettings,
     setDisplayTextColorSettings
@@ -74,6 +94,7 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
     setCurrentTextBoxStyleSetting
   ] = React.useState(StrokeType.default);
   const textColorToolbarItemRef = React.useRef<HTMLDivElement>();
+  const textStyleToolbarItemRef = React.useRef<HTMLDivElement>();
   const textBoxStyleToolbarItemRef = React.useRef<HTMLDivElement>();
   const textBoxColorToolbarItemRef = React.useRef<HTMLDivElement>();
 
@@ -129,6 +150,7 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
             <ToolbarItemWrapper
               onClick={() => {
                 setDisplayTypographySettings(!displayTypographySettings);
+                setDisplayTextStyleSettings(false);
                 setDisplayTextBoxColorSettings(false);
                 setDisplayTextBoxStyleSettings(false);
                 setDisplayTextColorSettings(false);
@@ -140,10 +162,20 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
             <Separator verticalMargin={6} />
           </>
         )}
-        <ToolbarItemWrapper>
-          <TextStyleIcon />
-          <ArrowDownIcon />
-        </ToolbarItemWrapper>
+        {textStyle && (
+          <ToolbarItemWrapper
+            onClick={() => {
+              setDisplayTextStyleSettings(!displayTextStyleSettings);
+              setDisplayTypographySettings(false);
+              setDisplayTextBoxColorSettings(false);
+              setDisplayTextBoxStyleSettings(false);
+              setDisplayTextColorSettings(false);
+            }}
+          >
+            <TextStyleIcon />
+            {displayTextStyleSettings ? <ArrowUpIcon /> : <ArrowDownIcon />}
+          </ToolbarItemWrapper>
+        )}
         <IncreaseIndentIcon />
         <DecreaseIndentIcon />
         {textColor && (
@@ -155,6 +187,7 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
                 setDisplayTextBoxColorSettings(false);
                 setDisplayTextBoxStyleSettings(false);
                 setDisplayTypographySettings(false);
+                setDisplayTextStyleSettings(false);
               }}
             >
               <TextColorIcon color={currentTextColorSetting} />
@@ -172,6 +205,7 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
                 setDisplayTextBoxColorSettings(false);
                 setDisplayTextColorSettings(false);
                 setDisplayTypographySettings(false);
+                setDisplayTextStyleSettings(false);
               }}
             >
               <TextBoxIcon />
@@ -191,6 +225,7 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
                 setDisplayTextColorSettings(false);
                 setDisplayTextBoxStyleSettings(false);
                 setDisplayTypographySettings(false);
+                setDisplayTextStyleSettings(false);
               }}
               ref={textBoxColorToolbarItemRef}
             >
@@ -227,7 +262,13 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
             />
           </Card>
         )}
-        {displayTextColorSettings && !displayTextBoxColorSettings && (
+        {displayTextStyleSettings && (
+          <Card>
+            <Spotlight>{textStyle.menuTitle}</Spotlight>
+            <Separator invisible />
+          </Card>
+        )}
+        {displayTextColorSettings && (
           <Card
             cardProps={{
               style: {
@@ -246,7 +287,7 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
             />
           </Card>
         )}
-        {displayTextBoxColorSettings && !displayTextColorSettings && (
+        {displayTextBoxColorSettings && (
           <Card
             cardProps={{
               style: {
@@ -267,28 +308,26 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
             />
           </Card>
         )}
-        {displayTextBoxStyleSettings &&
-          !displayTextColorSettings &&
-          !displayTextBoxColorSettings && (
-            <Card
-              cardProps={{
-                style: {
-                  position: "absolute",
-                  left: textBoxStyleToolbarItemRef.current.offsetLeft - 20,
-                  top: 8
-                }
-              }}
-            >
-              <Spotlight>{textBoxStyle.menuTitle}</Spotlight>
-              <Separator invisible />
-              <TextBoxStyleCardContent
-                selectedStroke={currentTextBoxStyleSetting}
-                setSelectedStroke={selectedStroke =>
-                  setCurrentTextBoxStyleSetting(selectedStroke)
-                }
-              />
-            </Card>
-          )}
+        {displayTextBoxStyleSettings && (
+          <Card
+            cardProps={{
+              style: {
+                position: "absolute",
+                left: textBoxStyleToolbarItemRef.current.offsetLeft - 20,
+                top: 8
+              }
+            }}
+          >
+            <Spotlight>{textBoxStyle.menuTitle}</Spotlight>
+            <Separator invisible />
+            <TextBoxStyleCardContent
+              selectedStroke={currentTextBoxStyleSetting}
+              setSelectedStroke={selectedStroke =>
+                setCurrentTextBoxStyleSetting(selectedStroke)
+              }
+            />
+          </Card>
+        )}
       </MenuArea>
     </>
   );

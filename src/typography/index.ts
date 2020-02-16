@@ -69,3 +69,11 @@ export const Legend2 = styled(Base)`
   line-height: 140.62%;
   color: ${({ theme }) => theme.color.gray3};
 `;
+
+export const Legend3 = styled(Base)`
+  font-size: 12px;
+  line-height: 140.62%;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: ${({ theme }) => theme.color.gray3};
+`;

@@ -9,7 +9,10 @@ import {
   H3,
   Label1,
   Label2,
-  Spotlight
+  Spotlight,
+  Legend3,
+  Legend2,
+  Legend
 } from "../src";
 
 const stories = storiesOf("Typography", module);
@@ -47,5 +50,17 @@ stories.add("Label2", () => <Label2>Hello world!</Label2>, {
 });
 
 stories.add("Spotlight", () => <Spotlight>Hello world!</Spotlight>, {
+  info: { inline: true }
+});
+
+stories.add("Legend", () => <Legend>Hello world!</Legend>, {
+  info: { inline: true }
+});
+
+stories.add("Legend2", () => <Legend2>Hello world!</Legend2>, {
+  info: { inline: true }
+});
+
+stories.add("Legend3", () => <Legend3>Hello world!</Legend3>, {
   info: { inline: true }
 });

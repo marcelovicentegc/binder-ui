@@ -12,7 +12,8 @@ import {
   Label2,
   Spotlight,
   Legend,
-  Legend2
+  Legend2,
+  Legend3
 } from "..";
 import { theme } from "../../utils/Theme";
 
@@ -159,5 +160,17 @@ describe("<Legend2 /> test case", () => {
   test("matches snapshot", () => {
     const { getByText } = render(<Legend2>Hi, I'm Legend2</Legend2>);
     expect(getByText("Hi, I'm Legend2")).toMatchSnapshot();
+  });
+});
+
+describe("<Legend3 /> test case", () => {
+  test("renders text", () => {
+    const { getByText } = render(<Legend3>Hi, I'm Legend3</Legend3>);
+    expect(getByText("Hi, I'm Legend3")).toBeInTheDocument();
+  });
+
+  test("matches snapshot", () => {
+    const { getByText } = render(<Legend3>Hi, I'm Legend3</Legend3>);
+    expect(getByText("Hi, I'm Legend3")).toMatchSnapshot();
   });
 });
