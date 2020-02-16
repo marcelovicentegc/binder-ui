@@ -50,3 +50,9 @@ export const ToolbarItemWrapper = styled.div`
     width: auto;
   }
 `;
+
+export const MenuArea = styled.div`
+  position: relative;
+  width: auto;
+  height: auto;
+`;

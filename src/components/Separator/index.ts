@@ -1,7 +1,10 @@
 import { styled } from "../../utils/Theme";
 
-export const Separator = styled.div<{ verticalMargin?: number }>`
-  ${({ theme, verticalMargin }) => `
+export const Separator = styled.div<{
+  verticalMargin?: number;
+  gray?: boolean;
+}>`
+  ${({ theme, verticalMargin, gray }) => `
   ${
     verticalMargin
       ? `
@@ -10,7 +13,9 @@ export const Separator = styled.div<{ verticalMargin?: number }>`
   width: 1px;
   margin: -${verticalMargin}px 0px;`
       : `
-  border-bottom: 1px solid ${theme.color.primaryBlack};
+  border-bottom: 1px solid ${
+    gray ? theme.color.gray2 : theme.color.primaryBlack
+  };
   padding-bottom: 8px;
 
   span {
