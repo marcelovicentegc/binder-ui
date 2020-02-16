@@ -32,7 +32,18 @@ import {
   TrashIcon,
   UserOptionsIcon,
   VisualizationIcon,
-  XIcon
+  XIcon,
+  DecreaseIndentIcon,
+  DrawIcon,
+  FormatTextBoxIcon,
+  IncreaseIndentIcon,
+  TextBoxColorIcon,
+  TextBoxColorSelectionIcon,
+  TextBoxIcon,
+  TextColorIcon,
+  TextColorSelectionIcon,
+  TextIcon,
+  TextStyleIcon
 } from "../src";
 import { styled } from "../src/utils/Theme";
 
@@ -68,7 +79,18 @@ const icons = [
   <TrashIcon />,
   <UserOptionsIcon />,
   <VisualizationIcon />,
-  <XIcon />
+  <XIcon />,
+  <DecreaseIndentIcon />,
+  <DrawIcon />,
+  <FormatTextBoxIcon />,
+  <IncreaseIndentIcon />,
+  <TextBoxColorIcon />,
+  <TextBoxColorSelectionIcon />,
+  <TextBoxIcon />,
+  <TextColorIcon />,
+  <TextColorSelectionIcon />,
+  <TextIcon />,
+  <TextStyleIcon />
 ];
 
 const Group = styled.div`

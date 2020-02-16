@@ -45,7 +45,18 @@ export {
   TrashIcon,
   UserOptionsIcon,
   VisualizationIcon,
-  XIcon
+  XIcon,
+  DecreaseIndentIcon,
+  DrawIcon,
+  FormatTextBoxIcon,
+  IncreaseIndentIcon,
+  TextBoxColorIcon,
+  TextBoxColorSelectionIcon,
+  TextBoxIcon,
+  TextColorIcon,
+  TextColorSelectionIcon,
+  TextIcon,
+  TextStyleIcon
 } from "./iconography";
 
 //Typography
