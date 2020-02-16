@@ -73,14 +73,14 @@ export const ItemWrapper = styled.div<{
   & > svg {
     position: absolute;
     right: 30px;
-    top: 14px;
+    top: 22px;
   }
 
   ${({ isSelectedItem, theme }) =>
     isSelectedItem
       ? `background-color: ${theme.color.white3};
-      & > span {
-          font-weight: 600;
+      & > div > span:first-child {
+          font-weight: 600; 
       }`
       : ""}
 `;

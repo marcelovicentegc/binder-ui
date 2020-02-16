@@ -15,7 +15,8 @@ import {
   TextBoxIcon,
   TextBoxColorIcon,
   DrawIcon,
-  ArrowDownIcon
+  ArrowDownIcon,
+  SuccessArrowIcon
 } from "../../iconography";
 import { Separator } from "../Separator";
 import { BodyText, Spotlight, Legend3, Legend2 } from "../../typography";
@@ -76,7 +77,8 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
   ] = React.useState(false);
   const [currentTextStyleSetting, setCurrentTextStyleSetting] = React.useState({
     key: 3,
-    fontFamily: ""
+    fontFamily: "Domine",
+    scope: "classics"
   });
   const [
     displayTextColorSettings,
@@ -118,11 +120,30 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
           stylesByScope.push({
             scope: scopeKey,
             fragments: [
-              <ItemWrapper key={generateKey(20)}>
+              <ItemWrapper
+                key={generateKey(20)}
+                onClick={() =>
+                  setCurrentTextStyleSetting({
+                    key: optionIndex,
+                    scope: option.scope as string,
+                    fontFamily: option.fontFamily
+                  })
+                }
+                isSelectedItem={
+                  currentTextStyleSetting.key === optionIndex &&
+                  currentTextStyleSetting.scope === option.scope &&
+                  currentTextStyleSetting.fontFamily === option.fontFamily
+                }
+              >
                 <Column>
                   <span>ABC abc 123 !?%</span>
                   <Legend2>{option.fontFamily}</Legend2>
                 </Column>
+                {currentTextStyleSetting.key === optionIndex &&
+                  currentTextStyleSetting.scope === option.scope &&
+                  currentTextStyleSetting.fontFamily === option.fontFamily && (
+                    <SuccessArrowIcon color={"black"} />
+                  )}
                 {optionIndex + 1 !== textStyle.options.length && (
                   <Separator gray />
                 )}
@@ -133,16 +154,16 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
       });
 
       scopes.push(
-        <>
+        <React.Fragment key={generateKey(20)}>
           <Separator invisible />
-          <Legend3 key={generateKey(20)}>{Object.values(scope)[0]}</Legend3>
+          <Legend3>{Object.values(scope)[0]}</Legend3>
           <Separator invisible />
           {stylesByScope.map(styles => {
             if (styles.scope === scopeKey) {
               return styles.fragments;
             }
           })}
-        </>
+        </React.Fragment>
       );
     });
 
@@ -150,35 +171,35 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
   };
 
   const colors = [
-    // gray scale
+    // Gray scale
     "#E9E9E9",
     "#C4C4C4",
     "#999999",
     "#4C4C4C",
     "#262626",
-    // red scale
+    // Red scale
     "#D24654",
     "#BB3B46",
     "#A52F38",
     "#831D23",
-    // orange scale
+    // Orange scale
     "#EBA248",
     "#E2873C",
     "#D86C30",
     "#C9441E",
     "#C43618",
-    // yellow scale
+    // Yellow scale
     "#F4DA4E",
     "#EFC841",
     "#EAB634",
     "#DA7F0D",
-    // green scale
+    // Green scale
     "#5DC957",
     "#4DAE48",
     "#3E933A",
     "#276B24",
     "#0F420E",
-    // blue scale
+    // Blue scale
     "#6ACEDF",
     "#59B5CF",
     "#479DBF",
