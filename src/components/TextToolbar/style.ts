@@ -20,17 +20,33 @@ export const StyledTextToolbar = styled.div`
   }
 
   & > span {
+    cursor: pointer;
     display: flex;
     align-items: center;
   }
 
   & > svg {
+    cursor: pointer;
+
     &:nth-child(-n + 2) {
       height: 22px;
       width: 22px;
     }
 
     height: 32px;
+    width: auto;
+  }
+`;
+
+export const ToolbarItemWrapper = styled.div`
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: 0.2s;
+
+  > :nth-child(2) {
+    height: 8px;
     width: auto;
   }
 `;

@@ -34,7 +34,7 @@ export const StyledMenu = styled.nav<
     transition: .2s;
 
     &:hover {
-      background-color: #F5F5F5;
+      background-color: ${theme.color.white3};
     }
 
     span {

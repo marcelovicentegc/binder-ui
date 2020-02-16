@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledTextToolbar } from "./style";
+import { StyledTextToolbar, ToolbarItemWrapper } from "./style";
 import {
   UndoChangesIcon,
   RedoChangesIcon,
@@ -7,13 +7,10 @@ import {
   DecreaseIndentIcon,
   TextStyleIcon,
   TextColorIcon,
-  TextColorSelectionIcon,
   TextBoxIcon,
   TextBoxColorIcon,
-  TextBoxColorSelectionIcon,
-  FormatTextBoxIcon,
   DrawIcon,
-  TextIcon
+  ArrowDownIcon
 } from "../../iconography";
 import { Separator } from "../Separator";
 import { BodyText } from "../../typography";
@@ -21,18 +18,37 @@ import { BodyText } from "../../typography";
 export const TextToolbar: React.FC = () => {
   return (
     <StyledTextToolbar>
-      <UndoChangesIcon />
-      <RedoChangesIcon />
+      <ToolbarItemWrapper>
+        <UndoChangesIcon />
+      </ToolbarItemWrapper>
+      <ToolbarItemWrapper>
+        <RedoChangesIcon />
+      </ToolbarItemWrapper>
       <Separator verticalMargin={6} />
-      <BodyText>Corpo de texto</BodyText>
+      <ToolbarItemWrapper>
+        <BodyText>Corpo de texto</BodyText>
+        <ArrowDownIcon />
+      </ToolbarItemWrapper>
       <Separator verticalMargin={6} />
-      <TextStyleIcon />
+      <ToolbarItemWrapper>
+        <TextStyleIcon />
+        <ArrowDownIcon />
+      </ToolbarItemWrapper>
       <IncreaseIndentIcon />
       <DecreaseIndentIcon />
-      <TextColorIcon />
+      <ToolbarItemWrapper>
+        <TextColorIcon />
+        <ArrowDownIcon />
+      </ToolbarItemWrapper>
       <Separator verticalMargin={6} />
-      <TextBoxIcon />
-      <TextBoxColorIcon />
+      <ToolbarItemWrapper>
+        <TextBoxIcon />
+        <ArrowDownIcon />
+      </ToolbarItemWrapper>
+      <ToolbarItemWrapper>
+        <TextBoxColorIcon />
+        <ArrowDownIcon />
+      </ToolbarItemWrapper>
       <Separator verticalMargin={6} />
       <DrawIcon />
     </StyledTextToolbar>
