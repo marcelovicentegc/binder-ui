@@ -14,6 +14,7 @@ export const Rectangule = styled.div<{
       : `1px ${dashed ? "dashed" : "solid"} ${theme.color.white4}`
   };
   cursor: pointer;
+  margin-bottom: 4px;
   `}
 
   & > div {

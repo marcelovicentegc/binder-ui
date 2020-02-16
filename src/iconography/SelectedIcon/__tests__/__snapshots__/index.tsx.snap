@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SelectedIcon /> test case renders dimensions passed via props 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: white;
+  box-shadow: 0px 0px 6px rgba(0,0,0,0.25);
+  border-radius: 50%;
+}
+
+.c0 > svg {
+  width: 20px;
+  height: auto;
+}
+
+<div
+  class="c0"
+  data-testid="selectedIcon"
+>
+  <svg
+    data-testid="arrowIcon"
+    version="1.1"
+    viewBox="0 0 451.846 451.847"
+    x="0px"
+    y="0px"
+  >
+    <g>
+      <path
+        d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744   L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284   c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"
+        fill="#33333"
+      />
+    </g>
+  </svg>
+</div>
+`;

@@ -8,7 +8,7 @@ interface SelectedIconProps {
 
 export const SelectedIcon: React.SFC<SelectedIconProps> = ({ dimension }) => {
   return (
-    <StyledSelectedIcon dimension={dimension}>
+    <StyledSelectedIcon dimension={dimension} data-testid="selectedIcon">
       <ArrowIcon />
     </StyledSelectedIcon>
   );

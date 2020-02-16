@@ -3,6 +3,7 @@ import { Rectangule } from "./style";
 import { Separator } from "../../Separator";
 import { theme } from "../../../utils/Theme";
 import { SelectedIcon } from "../../../iconography";
+import { Legend2 } from "../../../typography";
 
 export enum StrokeType {
   default,
@@ -54,6 +55,7 @@ export const TextBoxStyleCardContent: React.FC<TextBoxStyleCardContentProps> = (
           <Rectangule>
             <SelectedIcon />
           </Rectangule>
+          <Legend2>Styleless (white)</Legend2>
           {separators(true)}
           {solidStroke}
           {separators()}
@@ -66,6 +68,7 @@ export const TextBoxStyleCardContent: React.FC<TextBoxStyleCardContentProps> = (
           <Rectangule strokeHex={theme.color.red3}>
             <SelectedIcon />
           </Rectangule>
+          <Legend2>Solid stroke</Legend2>
           {separators(true)}
           {dashedStroke}
           {separators()}
@@ -78,6 +81,7 @@ export const TextBoxStyleCardContent: React.FC<TextBoxStyleCardContentProps> = (
           <Rectangule dashed strokeHex={theme.color.blue2}>
             <SelectedIcon />
           </Rectangule>
+          <Legend2>Dashed stroke</Legend2>
           {separators(true)}
           {solidStroke}
           {separators()}

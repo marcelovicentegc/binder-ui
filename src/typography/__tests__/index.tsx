@@ -10,7 +10,9 @@ import {
   H3,
   Label1,
   Label2,
-  Spotlight
+  Spotlight,
+  Legend,
+  Legend2
 } from "..";
 import { theme } from "../../utils/Theme";
 
@@ -133,5 +135,29 @@ describe("<Spotlight /> test case", () => {
   test("matches snapshot", () => {
     const { getByText } = render(<Spotlight>Hi, I'm Spotlight</Spotlight>);
     expect(getByText("Hi, I'm Spotlight")).toMatchSnapshot();
+  });
+});
+
+describe("<Legend /> test case", () => {
+  test("renders text", () => {
+    const { getByText } = render(<Legend>Hi, I'm Legend</Legend>);
+    expect(getByText("Hi, I'm Legend")).toBeInTheDocument();
+  });
+
+  test("matches snapshot", () => {
+    const { getByText } = render(<Legend>Hi, I'm Legend</Legend>);
+    expect(getByText("Hi, I'm Legend")).toMatchSnapshot();
+  });
+});
+
+describe("<Legend2 /> test case", () => {
+  test("renders text", () => {
+    const { getByText } = render(<Legend2>Hi, I'm Legend2</Legend2>);
+    expect(getByText("Hi, I'm Legend2")).toBeInTheDocument();
+  });
+
+  test("matches snapshot", () => {
+    const { getByText } = render(<Legend2>Hi, I'm Legend2</Legend2>);
+    expect(getByText("Hi, I'm Legend2")).toMatchSnapshot();
   });
 });

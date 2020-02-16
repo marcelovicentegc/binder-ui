@@ -74,7 +74,8 @@ export {
   Label2,
   Spotlight,
   BodyText,
-  Legend
+  Legend,
+  Legend2
 } from "./typography";
 
 // Theming
