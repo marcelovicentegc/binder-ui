@@ -11,16 +11,12 @@
 ## 🔨 Usage
 
 ```typescript
-import { Button, ButtonType, Mode, SearchBar } from "@binder/ui";
+import { Button, ButtonType, SearchBar } from "@binder/ui";
 
 const App = () => {
   <>
     <SearchBar />
-    <Button
-      label="Press me!"
-      buttonType={ButtonType.primary}
-      mode={Mode.dark}
-    />
+    <Button label="Press me!" buttonType={ButtonType.primary} />
   </>;
 };
 ```
