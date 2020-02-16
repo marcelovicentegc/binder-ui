@@ -4,7 +4,8 @@ export const Rectangule = styled.div<{
   strokeHex?: string;
   dashed?: boolean;
 }>`
-  ${({ theme, strokeHex, dashed }) => `width: 224px;
+  ${({ theme, strokeHex, dashed }) => `position: relative;
+  width: 224px;
   height: 48px;
   background: ${theme.color.white3};
   border: ${
@@ -14,4 +15,10 @@ export const Rectangule = styled.div<{
   };
   cursor: pointer;
   `}
+
+  & > div {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+  }
 `;

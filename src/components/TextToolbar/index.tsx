@@ -18,7 +18,7 @@ import { TypographyCardItems } from "./TypographyCardItems";
 import { Card } from "../Card";
 import { ArrowUpIcon } from "../../iconography/ArrowUpIcon";
 import { CirclePicker } from "react-color";
-import { TextBoxStyleCardContent } from "./TextBoxStyleCardContent";
+import { TextBoxStyleCardContent, StrokeType } from "./TextBoxStyleCardContent";
 
 export const TextToolbar: React.FC = () => {
   const [
@@ -51,7 +51,7 @@ export const TextToolbar: React.FC = () => {
   const [
     currentTextBoxStyleSetting,
     setCurrentTextBoxStyleSetting
-  ] = React.useState("");
+  ] = React.useState(StrokeType.default);
 
   const colors = [
     // gray scale
@@ -223,7 +223,12 @@ export const TextToolbar: React.FC = () => {
             >
               <Spotlight>Estilos de caixa de texto</Spotlight>
               <Separator invisible />
-              <TextBoxStyleCardContent />
+              <TextBoxStyleCardContent
+                selectedStroke={currentTextBoxStyleSetting}
+                setSelectedStroke={selectedStroke =>
+                  setCurrentTextBoxStyleSetting(selectedStroke)
+                }
+              />
             </Card>
           )}
       </MenuArea>
