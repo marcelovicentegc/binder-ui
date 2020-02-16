@@ -53,7 +53,6 @@ export {
   FormatTextBoxIcon,
   IncreaseIndentIcon,
   TextBoxColorIcon,
-  TextBoxColorSelectionIcon,
   TextBoxIcon,
   TextColorIcon,
   TextIcon,

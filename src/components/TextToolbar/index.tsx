@@ -35,6 +35,53 @@ export const TextToolbar: React.FC = () => {
   const [currentTextColorSetting, setCurrentTextColorSetting] = React.useState(
     ""
   );
+  const [
+    displayTextBoxColorSettings,
+    setDisplayTextBoxColorSettings
+  ] = React.useState(false);
+  const [
+    currentTextBoxColorSetting,
+    setCurrentTextBoxColorSetting
+  ] = React.useState("");
+
+  const colors = [
+    // gray scale
+    "#E9E9E9",
+    "#C4C4C4",
+    "#999999",
+    "#4C4C4C",
+    "#262626",
+    // red scale
+    "#D24654",
+    "#BB3B46",
+    "#A52F38",
+    "#831D23",
+    "#831D23",
+    // orange scale
+    "#EBA248",
+    "#E2873C",
+    "#D86C30",
+    "#C9441E",
+    "#C43618",
+    // yellow scale
+    "#F4DA4E",
+    "#EFC841",
+    "#EAB634",
+    "#EFC841",
+    "#DA7F0D",
+    // green scale
+    "#5DC957",
+    "#4DAE48",
+    "#3E933A",
+    "#276B24",
+    "#0F420E",
+    // blue scale
+    "#6ACEDF",
+    "#59B5CF",
+    "#479DBF",
+    "#3584AF",
+    "#12538F"
+  ];
 
   return (
     <>
@@ -62,7 +109,10 @@ export const TextToolbar: React.FC = () => {
         <IncreaseIndentIcon />
         <DecreaseIndentIcon />
         <ToolbarItemWrapper
-          onClick={() => setDisplayTextColorSettings(!displayTextColorSettings)}
+          onClick={() => {
+            setDisplayTextColorSettings(!displayTextColorSettings);
+            setDisplayTextBoxColorSettings(false);
+          }}
         >
           <TextColorIcon color={currentTextColorSetting} />
           {displayTextColorSettings ? <ArrowUpIcon /> : <ArrowDownIcon />}
@@ -72,9 +122,14 @@ export const TextToolbar: React.FC = () => {
           <TextBoxIcon />
           <ArrowDownIcon />
         </ToolbarItemWrapper>
-        <ToolbarItemWrapper>
-          <TextBoxColorIcon />
-          <ArrowDownIcon />
+        <ToolbarItemWrapper
+          onClick={() => {
+            setDisplayTextBoxColorSettings(!displayTextBoxColorSettings);
+            setDisplayTextColorSettings(false);
+          }}
+        >
+          <TextBoxColorIcon color={currentTextBoxColorSetting} />
+          {displayTextBoxColorSettings ? <ArrowUpIcon /> : <ArrowDownIcon />}
         </ToolbarItemWrapper>
         <Separator verticalMargin={6} />
         <DrawIcon />
@@ -99,7 +154,7 @@ export const TextToolbar: React.FC = () => {
             />
           </Card>
         )}
-        {displayTextColorSettings && (
+        {displayTextColorSettings && !displayTextBoxColorSettings && (
           <Card
             cardProps={{
               style: {
@@ -113,45 +168,29 @@ export const TextToolbar: React.FC = () => {
             <Separator invisible />
             <CirclePicker
               color={currentTextColorSetting}
-              colors={[
-                // gray scale
-                "#E9E9E9",
-                "#C4C4C4",
-                "#999999",
-                "#4C4C4C",
-                "#262626",
-                // red scale
-                "#D24654",
-                "#BB3B46",
-                "#A52F38",
-                "#831D23",
-                "#831D23",
-                // orange scale
-                "#EBA248",
-                "#E2873C",
-                "#D86C30",
-                "#C9441E",
-                "#C43618",
-                // yellow scale
-                "#F4DA4E",
-                "#EFC841",
-                "#EAB634",
-                "#EFC841",
-                "#DA7F0D",
-                // green scale
-                "#5DC957",
-                "#4DAE48",
-                "#3E933A",
-                "#276B24",
-                "#0F420E",
-                // blue scale
-                "#6ACEDF",
-                "#59B5CF",
-                "#479DBF",
-                "#3584AF",
-                "#12538F"
-              ]}
+              colors={colors}
               onChangeComplete={color => setCurrentTextColorSetting(color.hex)}
+            />
+          </Card>
+        )}
+        {displayTextBoxColorSettings && !displayTextColorSettings && (
+          <Card
+            cardProps={{
+              style: {
+                position: "absolute",
+                left: 340,
+                top: 8
+              }
+            }}
+          >
+            <Spotlight>Preenchimento</Spotlight>
+            <Separator invisible />
+            <CirclePicker
+              color={currentTextBoxColorSetting}
+              colors={colors}
+              onChangeComplete={color =>
+                setCurrentTextBoxColorSetting(color.hex)
+              }
             />
           </Card>
         )}

@@ -35,7 +35,6 @@ export { DrawIcon } from "./DrawIcon";
 export { FormatTextBoxIcon } from "./FormatTextBoxIcon";
 export { IncreaseIndentIcon } from "./IncreaseIndentIcon";
 export { TextBoxColorIcon } from "./TextBoxColorIcon";
-export { TextBoxColorSelectionIcon } from "./TextBoxColorSelectionIcon";
 export { TextBoxIcon } from "./TextBoxIcon";
 export { TextColorIcon } from "./TextColorIcon";
 export { TextIcon } from "./TextIcon";

@@ -19,10 +19,10 @@ export const TextBoxColorIcon: React.SFC<React.SVGProps<
           fill="#262626"
         />
         <path
-          fill-rule="evenodd"
+          fill-rule={props.color ? "nonzero" : "evenodd"}
           clip-rule="evenodd"
           d="M28 23H4V29H28V23ZM26 25H6V27H26V25Z"
-          fill="#262626"
+          fill={props.color ? props.color : "#262626"}
         />
         <path
           fill-rule="evenodd"
