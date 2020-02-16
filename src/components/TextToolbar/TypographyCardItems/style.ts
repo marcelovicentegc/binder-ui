@@ -25,8 +25,8 @@ export const TypographyItemWrapper = styled.div<{
   ${({ isSelectedItem, theme }) =>
     isSelectedItem
       ? `background-color: ${theme.color.white3};
-    & > span {
-        font-weight: 600;
-    }`
+      & > span {
+          font-weight: 600;
+      }`
       : ""}
 `;

@@ -1,5 +1,10 @@
 import React from "react";
-import { StyledTextToolbar, ToolbarItemWrapper, MenuArea } from "./style";
+import {
+  StyledTextToolbar,
+  ToolbarItemWrapper,
+  MenuArea,
+  ItemWrapper
+} from "./style";
 import {
   UndoChangesIcon,
   RedoChangesIcon,
@@ -20,6 +25,7 @@ import { ArrowUpIcon } from "../../iconography/ArrowUpIcon";
 import { CirclePicker } from "react-color";
 import { TextBoxStyleCardContent, StrokeType } from "./TextBoxStyleCardContent";
 import { generateKey } from "../../utils/generateKey";
+import { Column } from "../../bases/Flex";
 
 interface ScopeInterface {
   [key: string]: string;
@@ -68,9 +74,10 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
     displayTextStyleSettings,
     setDisplayTextStyleSettings
   ] = React.useState(false);
-  const [currentTextStyleSetting, setCurrentTextStyleSetting] = React.useState(
-    ""
-  );
+  const [currentTextStyleSetting, setCurrentTextStyleSetting] = React.useState({
+    key: 3,
+    fontFamily: ""
+  });
   const [
     displayTextColorSettings,
     setDisplayTextColorSettings
@@ -106,17 +113,20 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
     textStyle.scopes.map(scope => {
       const scopeKey = Object.keys(scope)[0];
 
-      textStyle.options.map(option => {
+      textStyle.options.map((option, optionIndex) => {
         if (option.scope === scopeKey) {
           stylesByScope.push({
             scope: scopeKey,
             fragments: [
-              <React.Fragment key={generateKey(20)}>
-                <span>ABC abc 123 !?%</span>
-                <Legend2>{option.fontFamily}</Legend2>
-                <Separator gray />
-                <Separator invisible />
-              </React.Fragment>
+              <ItemWrapper key={generateKey(20)}>
+                <Column>
+                  <span>ABC abc 123 !?%</span>
+                  <Legend2>{option.fontFamily}</Legend2>
+                </Column>
+                {optionIndex + 1 !== textStyle.options.length && (
+                  <Separator gray />
+                )}
+              </ItemWrapper>
             ]
           });
         }
@@ -124,6 +134,7 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
 
       scopes.push(
         <>
+          <Separator invisible />
           <Legend3 key={generateKey(20)}>{Object.values(scope)[0]}</Legend3>
           <Separator invisible />
           {stylesByScope.map(styles => {
