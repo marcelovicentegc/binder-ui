@@ -38,7 +38,6 @@ export { TextBoxColorIcon } from "./TextBoxColorIcon";
 export { TextBoxColorSelectionIcon } from "./TextBoxColorSelectionIcon";
 export { TextBoxIcon } from "./TextBoxIcon";
 export { TextColorIcon } from "./TextColorIcon";
-export { TextColorSelectionIcon } from "./TextColorSelectionIcon";
 export { TextIcon } from "./TextIcon";
 export { TextStyleIcon } from "./TextStyleIcon";
 export { RedoChangesIcon } from "./RedoChangesIcon";

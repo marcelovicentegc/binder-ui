@@ -41,13 +41,12 @@ import {
   TextBoxColorSelectionIcon,
   TextBoxIcon,
   TextColorIcon,
-  TextColorSelectionIcon,
   TextIcon,
   TextStyleIcon,
   UndoChangesIcon,
   RedoChangesIcon
 } from "../src";
-import { styled } from "../src/utils/Theme";
+import { styled, theme } from "../src/utils/Theme";
 
 const icons = [
   <AboutIcon />,
@@ -90,7 +89,7 @@ const icons = [
   <TextBoxColorSelectionIcon />,
   <TextBoxIcon />,
   <TextColorIcon />,
-  <TextColorSelectionIcon />,
+  <TextColorIcon color={theme.color.green6} />,
   <TextIcon />,
   <TextStyleIcon />,
   <RedoChangesIcon />,

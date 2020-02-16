@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextColorIcon /> test case renders color passed via props 1`] = `
+<svg
+  color="#479DBF"
+  data-testid="textColorIcon"
+  fill="none"
+  height="32"
+  viewBox="0 0 32 32"
+  width="32"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <rect
+    fill="#479DBF"
+    height="6"
+    width="24"
+    x="4"
+    y="23"
+  />
+  <path
+    d="M21.6336 21L19.7513 15.9828H12.1681L10.2857 21H8L14.5613 4H17.4387L24 21H21.6336ZM16.0134 5.89971H15.879L12.7059 14.1805H19.1866L16.0134 5.89971Z"
+    fill="#262626"
+  />
+</svg>
+`;

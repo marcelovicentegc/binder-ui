@@ -56,7 +56,6 @@ export {
   TextBoxColorSelectionIcon,
   TextBoxIcon,
   TextColorIcon,
-  TextColorSelectionIcon,
   TextIcon,
   TextStyleIcon,
   UndoChangesIcon,

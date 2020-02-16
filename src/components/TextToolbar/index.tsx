@@ -64,7 +64,7 @@ export const TextToolbar: React.FC = () => {
         <ToolbarItemWrapper
           onClick={() => setDisplayTextColorSettings(!displayTextColorSettings)}
         >
-          <TextColorIcon />
+          <TextColorIcon color={currentTextColorSetting} />
           {displayTextColorSettings ? <ArrowUpIcon /> : <ArrowDownIcon />}
         </ToolbarItemWrapper>
         <Separator verticalMargin={6} />
