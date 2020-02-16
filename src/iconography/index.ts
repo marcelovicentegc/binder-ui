@@ -41,3 +41,4 @@ export { TextIcon } from "./TextIcon";
 export { TextStyleIcon } from "./TextStyleIcon";
 export { RedoChangesIcon } from "./RedoChangesIcon";
 export { UndoChangesIcon } from "./UndoChangesIcon";
+export { SelectedIcon } from "./SelectedIcon";

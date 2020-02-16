@@ -58,7 +58,8 @@ export {
   TextIcon,
   TextStyleIcon,
   UndoChangesIcon,
-  RedoChangesIcon
+  RedoChangesIcon,
+  SelectedIcon
 } from "./iconography";
 
 //Typography
