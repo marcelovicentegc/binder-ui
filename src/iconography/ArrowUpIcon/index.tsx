@@ -12,8 +12,8 @@ export const ArrowUpIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
       {...props}
     >
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M7.00001 3.4142L1.70712 8.70709L0.292908 7.29288L7.00001 0.585771L13.7071 7.29288L12.2929 8.70709L7.00001 3.4142Z"
         fill="black"
       />

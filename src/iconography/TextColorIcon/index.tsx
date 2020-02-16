@@ -17,8 +17,8 @@ export const TextColorIcon: React.SFC<React.SVGProps<
         <rect x="4" y="23" width="24" height="6" fill={props.color} />
       ) : (
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M28 23H4V29H28V23ZM26 25H6V27H26V25Z"
           fill="#262626"
         />

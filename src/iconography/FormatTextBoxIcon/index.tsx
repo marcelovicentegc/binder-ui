@@ -19,8 +19,8 @@ export const FormatTextBoxIcon: React.SFC<React.SVGProps<
         fill="#CC3E78"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M6 6H26V18H24.4742L24.2922 20H28V4H4V20H7.7348L7.55204 18H6V6Z"
         fill="#262626"
       />

@@ -16,8 +16,8 @@ export const TextBoxIcon: React.SFC<React.SVGProps<SVGSVGElement>> = props => {
         fill="#262626"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M6 6H26V18H22.1404L22.9123 20H26H28V18V6V4H26H6H4V6V18V20H6H9.08769L9.85961 18H6V6Z"
         fill="#D86C30"
       />

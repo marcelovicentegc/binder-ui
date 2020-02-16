@@ -18,6 +18,7 @@ import { TypographyCardItems } from "./TypographyCardItems";
 import { Card } from "../Card";
 import { ArrowUpIcon } from "../../iconography/ArrowUpIcon";
 import { CirclePicker } from "react-color";
+import { TextBoxStyleCardContent } from "./TextBoxStyleCardContent";
 
 export const TextToolbar: React.FC = () => {
   const [
@@ -43,6 +44,14 @@ export const TextToolbar: React.FC = () => {
     currentTextBoxColorSetting,
     setCurrentTextBoxColorSetting
   ] = React.useState("");
+  const [
+    displayTextBoxStyleSettings,
+    setDisplayTextBoxStyleSettings
+  ] = React.useState(false);
+  const [
+    currentTextBoxStyleSetting,
+    setCurrentTextBoxStyleSetting
+  ] = React.useState("");
 
   const colors = [
     // gray scale
@@ -56,7 +65,6 @@ export const TextToolbar: React.FC = () => {
     "#BB3B46",
     "#A52F38",
     "#831D23",
-    "#831D23",
     // orange scale
     "#EBA248",
     "#E2873C",
@@ -67,7 +75,6 @@ export const TextToolbar: React.FC = () => {
     "#F4DA4E",
     "#EFC841",
     "#EAB634",
-    "#EFC841",
     "#DA7F0D",
     // green scale
     "#5DC957",
@@ -112,20 +119,28 @@ export const TextToolbar: React.FC = () => {
           onClick={() => {
             setDisplayTextColorSettings(!displayTextColorSettings);
             setDisplayTextBoxColorSettings(false);
+            setDisplayTextBoxStyleSettings(false);
           }}
         >
           <TextColorIcon color={currentTextColorSetting} />
           {displayTextColorSettings ? <ArrowUpIcon /> : <ArrowDownIcon />}
         </ToolbarItemWrapper>
         <Separator verticalMargin={6} />
-        <ToolbarItemWrapper>
+        <ToolbarItemWrapper
+          onClick={() => {
+            setDisplayTextBoxStyleSettings(!displayTextBoxStyleSettings);
+            setDisplayTextBoxColorSettings(false);
+            setDisplayTextColorSettings(false);
+          }}
+        >
           <TextBoxIcon />
-          <ArrowDownIcon />
+          {displayTextBoxStyleSettings ? <ArrowUpIcon /> : <ArrowDownIcon />}
         </ToolbarItemWrapper>
         <ToolbarItemWrapper
           onClick={() => {
             setDisplayTextBoxColorSettings(!displayTextBoxColorSettings);
             setDisplayTextColorSettings(false);
+            setDisplayTextBoxStyleSettings(false);
           }}
         >
           <TextBoxColorIcon color={currentTextBoxColorSetting} />
@@ -194,6 +209,23 @@ export const TextToolbar: React.FC = () => {
             />
           </Card>
         )}
+        {displayTextBoxStyleSettings &&
+          !displayTextColorSettings &&
+          !displayTextBoxColorSettings && (
+            <Card
+              cardProps={{
+                style: {
+                  position: "absolute",
+                  left: 470,
+                  top: 8
+                }
+              }}
+            >
+              <Spotlight>Estilos de caixa de texto</Spotlight>
+              <Separator invisible />
+              <TextBoxStyleCardContent />
+            </Card>
+          )}
       </MenuArea>
     </>
   );

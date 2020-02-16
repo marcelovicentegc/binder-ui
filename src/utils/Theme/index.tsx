@@ -11,6 +11,7 @@ export const theme = {
     white1: "#F7F7F7",
     white2: "#DCDDE0", // TODO: move to grey
     white3: "#F5F5F5",
+    white4: "#DEDEDE",
     gray1: "#E9E9E9",
     gray2: "#C4C4C4",
     gray3: "#999999",
