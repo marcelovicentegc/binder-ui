@@ -6,6 +6,16 @@
   "license": "MIT",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "keywords": [
+    "binder",
+    "design",
+    "react",
+    "ui",
+    "typescript",
+    "components",
+    "framework",
+    "frontend"
+  ],
   "scripts": {
     "build": "rimraf lib && tsc -p tsconfig.json",
     "build:storybook": "build-storybook -s public -c .storybook -o public",

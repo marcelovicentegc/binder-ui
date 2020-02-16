@@ -73,6 +73,9 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
     currentTextBoxStyleSetting,
     setCurrentTextBoxStyleSetting
   ] = React.useState(StrokeType.default);
+  const textColorToolbarItemRef = React.useRef<HTMLDivElement>();
+  const textBoxStyleToolbarItemRef = React.useRef<HTMLDivElement>();
+  const textBoxColorToolbarItemRef = React.useRef<HTMLDivElement>();
 
   const colors = [
     // gray scale
@@ -143,6 +146,7 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
         {textColor && (
           <>
             <ToolbarItemWrapper
+              ref={textColorToolbarItemRef}
               onClick={() => {
                 setDisplayTextColorSettings(!displayTextColorSettings);
                 setDisplayTextBoxColorSettings(false);
@@ -158,6 +162,7 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
         {textBoxStyle && (
           <>
             <ToolbarItemWrapper
+              ref={textBoxStyleToolbarItemRef}
               onClick={() => {
                 setDisplayTextBoxStyleSettings(!displayTextBoxStyleSettings);
                 setDisplayTextBoxColorSettings(false);
@@ -181,6 +186,7 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
                 setDisplayTextColorSettings(false);
                 setDisplayTextBoxStyleSettings(false);
               }}
+              ref={textBoxColorToolbarItemRef}
             >
               <TextBoxColorIcon color={currentTextBoxColorSetting} />
               {displayTextBoxColorSettings ? (
@@ -220,7 +226,7 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
             cardProps={{
               style: {
                 position: "absolute",
-                left: 395,
+                left: textColorToolbarItemRef.current.offsetLeft - 20,
                 top: 8
               }
             }}
@@ -239,7 +245,7 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
             cardProps={{
               style: {
                 position: "absolute",
-                left: 340,
+                left: textBoxColorToolbarItemRef.current.offsetLeft - 200,
                 top: 8
               }
             }}
@@ -262,7 +268,7 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
               cardProps={{
                 style: {
                   position: "absolute",
-                  left: 470,
+                  left: textBoxStyleToolbarItemRef.current.offsetLeft - 20,
                   top: 8
                 }
               }}
