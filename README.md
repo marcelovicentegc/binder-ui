@@ -2,14 +2,37 @@
 
 [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://binder-ui.netlify.com/) [![npm version](https://badge.fury.io/js/%40binder%2Fui.svg)](https://www.npmjs.com/package/@binder/ui)
 
-## ⬆️ Directions
+## 📦 Install
+
+`npm i @binder/ui`
+
+`yarn add @binder/ui`
+
+## 🔨 Usage
+
+```typescript
+import { Button, ButtonType, Mode, SearchBar } from "@binder/ui";
+
+const App = () => {
+  <>
+    <SearchBar />
+    <Button
+      label="Press me!"
+      buttonType={ButtonType.primary}
+      mode={Mode.dark}
+    />
+  </>;
+};
+```
+
+## ⬆️ Development directions
 
 1. Clone this repo: `git clone https://github.com/marcelovicentegc/binder-ui.git`
 2. cd into it: `cd binder-ui`
 3. Install its dependencies (use npm): `npm i`
 4. Run the application: `npm start`
 
-## 🚧 Contributing
+## 🤝 Contributing
 
 1. Create your own branch from `develop`
 2. Make the changes you wish
