@@ -127,9 +127,12 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
         {bodyText && (
           <>
             <ToolbarItemWrapper
-              onClick={() =>
-                setDisplayTypographySettings(!displayTypographySettings)
-              }
+              onClick={() => {
+                setDisplayTypographySettings(!displayTypographySettings);
+                setDisplayTextBoxColorSettings(false);
+                setDisplayTextBoxStyleSettings(false);
+                setDisplayTextColorSettings(false);
+              }}
             >
               <BodyText>{bodyText.label}</BodyText>
               {displayTypographySettings ? <ArrowUpIcon /> : <ArrowDownIcon />}
@@ -151,6 +154,7 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
                 setDisplayTextColorSettings(!displayTextColorSettings);
                 setDisplayTextBoxColorSettings(false);
                 setDisplayTextBoxStyleSettings(false);
+                setDisplayTypographySettings(false);
               }}
             >
               <TextColorIcon color={currentTextColorSetting} />
@@ -167,6 +171,7 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
                 setDisplayTextBoxStyleSettings(!displayTextBoxStyleSettings);
                 setDisplayTextBoxColorSettings(false);
                 setDisplayTextColorSettings(false);
+                setDisplayTypographySettings(false);
               }}
             >
               <TextBoxIcon />
@@ -185,6 +190,7 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
                 setDisplayTextBoxColorSettings(!displayTextBoxColorSettings);
                 setDisplayTextColorSettings(false);
                 setDisplayTextBoxStyleSettings(false);
+                setDisplayTypographySettings(false);
               }}
               ref={textBoxColorToolbarItemRef}
             >
