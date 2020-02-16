@@ -155,3 +155,30 @@ export const bodyTextOptions = [
   "List",
   "Quote"
 ];
+
+export const textStyleOptions = [
+  {
+    scope: "trads",
+    fontFamily: "Muli"
+  },
+  {
+    scope: "trads",
+    fontFamily: "Source Sans Pro"
+  },
+  {
+    scope: "trads",
+    fontFamily: "Work Sans"
+  },
+  {
+    scope: "classics",
+    fontFamily: "Domine"
+  },
+  {
+    scope: "handWritten",
+    fontFamily: "Gochi Hand"
+  },
+  {
+    scope: "handWritten",
+    fontFamily: "Nanun Pen"
+  }
+];

@@ -1,7 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { TextToolbar } from "../src";
-import { bodyTextOptions } from "../src/mocks";
+import { bodyTextOptions, textStyleOptions } from "../src/mocks";
 
 const stories = storiesOf("TextToolbar", module);
 
@@ -67,6 +67,36 @@ stories.add(
       textColor={{ menuTitle: "Text color" }}
       textBoxColor={{ menuTitle: "Text box color" }}
       textBoxStyle={{ menuTitle: "Text box style" }}
+    />
+  ),
+  {
+    info: { inline: true }
+  }
+);
+
+stories.add(
+  "with ability to select the text style",
+  () => (
+    <TextToolbar
+      bodyText={{ label: "Body text", options: bodyTextOptions }}
+      textColor={{ menuTitle: "Text color" }}
+      textBoxColor={{ menuTitle: "Text box color" }}
+      textBoxStyle={{ menuTitle: "Text box style" }}
+      textStyle={{
+        menuTitle: "Text styles",
+        scopes: [
+          {
+            trads: "Tradicionals"
+          },
+          {
+            classics: "Classics"
+          },
+          {
+            handWritten: "Hand written"
+          }
+        ],
+        options: textStyleOptions
+      }}
     />
   ),
   {

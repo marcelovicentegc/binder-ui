@@ -13,12 +13,13 @@ import {
   ArrowDownIcon
 } from "../../iconography";
 import { Separator } from "../Separator";
-import { BodyText, Spotlight } from "../../typography";
+import { BodyText, Spotlight, Legend3, Legend2 } from "../../typography";
 import { TypographyCardItems } from "./TypographyCardItems";
 import { Card } from "../Card";
 import { ArrowUpIcon } from "../../iconography/ArrowUpIcon";
 import { CirclePicker } from "react-color";
 import { TextBoxStyleCardContent, StrokeType } from "./TextBoxStyleCardContent";
+import { generateKey } from "../../utils/generateKey";
 
 interface ScopeInterface {
   [key: string]: string;
@@ -33,9 +34,9 @@ interface TextToolbarProps {
     menuTitle: string;
     scopes: ScopeInterface[];
     options: {
-      scope: keyof ScopeInterface[];
+      scope: keyof ScopeInterface;
       fontFamily: string;
-    };
+    }[];
   };
   textColor?: {
     menuTitle: string;
@@ -97,6 +98,45 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
   const textStyleToolbarItemRef = React.useRef<HTMLDivElement>();
   const textBoxStyleToolbarItemRef = React.useRef<HTMLDivElement>();
   const textBoxColorToolbarItemRef = React.useRef<HTMLDivElement>();
+
+  const renderTextStyles = () => {
+    const scopes: React.ReactNode[] = [];
+    const stylesByScope: { fragments: React.ReactNode[]; scope: string }[] = [];
+
+    textStyle.scopes.map(scope => {
+      const scopeKey = Object.keys(scope)[0];
+
+      textStyle.options.map(option => {
+        if (option.scope === scopeKey) {
+          stylesByScope.push({
+            scope: scopeKey,
+            fragments: [
+              <React.Fragment key={generateKey(20)}>
+                <span>ABC abc 123 !?%</span>
+                <Legend2>{option.fontFamily}</Legend2>
+                <Separator gray />
+                <Separator invisible />
+              </React.Fragment>
+            ]
+          });
+        }
+      });
+
+      scopes.push(
+        <>
+          <Legend3 key={generateKey(20)}>{Object.values(scope)[0]}</Legend3>
+          <Separator invisible />
+          {stylesByScope.map(styles => {
+            if (styles.scope === scopeKey) {
+              return styles.fragments;
+            }
+          })}
+        </>
+      );
+    });
+
+    return scopes;
+  };
 
   const colors = [
     // gray scale
@@ -164,6 +204,7 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
         )}
         {textStyle && (
           <ToolbarItemWrapper
+            ref={textStyleToolbarItemRef}
             onClick={() => {
               setDisplayTextStyleSettings(!displayTextStyleSettings);
               setDisplayTypographySettings(false);
@@ -263,9 +304,19 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
           </Card>
         )}
         {displayTextStyleSettings && (
-          <Card>
+          <Card
+            cardProps={{
+              style: {
+                position: "absolute",
+                left: textStyleToolbarItemRef.current.offsetLeft - 20,
+                top: 8,
+                minWidth: 256
+              }
+            }}
+          >
             <Spotlight>{textStyle.menuTitle}</Spotlight>
             <Separator invisible />
+            {renderTextStyles()}
           </Card>
         )}
         {displayTextColorSettings && (
