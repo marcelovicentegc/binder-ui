@@ -20,7 +20,28 @@ import { ArrowUpIcon } from "../../iconography/ArrowUpIcon";
 import { CirclePicker } from "react-color";
 import { TextBoxStyleCardContent, StrokeType } from "./TextBoxStyleCardContent";
 
-export const TextToolbar: React.FC = () => {
+interface TextToolbarProps {
+  bodyText?: {
+    label: string;
+    options: string[];
+  };
+  textColor?: {
+    menuTitle: string;
+  };
+  textBoxColor?: {
+    menuTitle: string;
+  };
+  textBoxStyle?: {
+    menuTitle: string;
+  };
+}
+
+export const TextToolbar: React.FC<TextToolbarProps> = ({
+  bodyText,
+  textColor,
+  textBoxColor,
+  textBoxStyle
+}) => {
   const [
     displayTypographySettings,
     setDisplayTypographySettings
@@ -100,52 +121,76 @@ export const TextToolbar: React.FC = () => {
           <RedoChangesIcon />
         </ToolbarItemWrapper>
         <Separator verticalMargin={6} />
-        <ToolbarItemWrapper
-          onClick={() =>
-            setDisplayTypographySettings(!displayTypographySettings)
-          }
-        >
-          <BodyText>Corpo de texto</BodyText>
-          {displayTypographySettings ? <ArrowUpIcon /> : <ArrowDownIcon />}
-        </ToolbarItemWrapper>
-        <Separator verticalMargin={6} />
+        {bodyText && (
+          <>
+            <ToolbarItemWrapper
+              onClick={() =>
+                setDisplayTypographySettings(!displayTypographySettings)
+              }
+            >
+              <BodyText>{bodyText.label}</BodyText>
+              {displayTypographySettings ? <ArrowUpIcon /> : <ArrowDownIcon />}
+            </ToolbarItemWrapper>
+            <Separator verticalMargin={6} />
+          </>
+        )}
         <ToolbarItemWrapper>
           <TextStyleIcon />
           <ArrowDownIcon />
         </ToolbarItemWrapper>
         <IncreaseIndentIcon />
         <DecreaseIndentIcon />
-        <ToolbarItemWrapper
-          onClick={() => {
-            setDisplayTextColorSettings(!displayTextColorSettings);
-            setDisplayTextBoxColorSettings(false);
-            setDisplayTextBoxStyleSettings(false);
-          }}
-        >
-          <TextColorIcon color={currentTextColorSetting} />
-          {displayTextColorSettings ? <ArrowUpIcon /> : <ArrowDownIcon />}
-        </ToolbarItemWrapper>
-        <Separator verticalMargin={6} />
-        <ToolbarItemWrapper
-          onClick={() => {
-            setDisplayTextBoxStyleSettings(!displayTextBoxStyleSettings);
-            setDisplayTextBoxColorSettings(false);
-            setDisplayTextColorSettings(false);
-          }}
-        >
-          <TextBoxIcon />
-          {displayTextBoxStyleSettings ? <ArrowUpIcon /> : <ArrowDownIcon />}
-        </ToolbarItemWrapper>
-        <ToolbarItemWrapper
-          onClick={() => {
-            setDisplayTextBoxColorSettings(!displayTextBoxColorSettings);
-            setDisplayTextColorSettings(false);
-            setDisplayTextBoxStyleSettings(false);
-          }}
-        >
-          <TextBoxColorIcon color={currentTextBoxColorSetting} />
-          {displayTextBoxColorSettings ? <ArrowUpIcon /> : <ArrowDownIcon />}
-        </ToolbarItemWrapper>
+        {textColor && (
+          <>
+            <ToolbarItemWrapper
+              onClick={() => {
+                setDisplayTextColorSettings(!displayTextColorSettings);
+                setDisplayTextBoxColorSettings(false);
+                setDisplayTextBoxStyleSettings(false);
+              }}
+            >
+              <TextColorIcon color={currentTextColorSetting} />
+              {displayTextColorSettings ? <ArrowUpIcon /> : <ArrowDownIcon />}
+            </ToolbarItemWrapper>
+            {(textBoxStyle || textBoxColor) && <Separator verticalMargin={6} />}
+          </>
+        )}
+        {textBoxStyle && (
+          <>
+            <ToolbarItemWrapper
+              onClick={() => {
+                setDisplayTextBoxStyleSettings(!displayTextBoxStyleSettings);
+                setDisplayTextBoxColorSettings(false);
+                setDisplayTextColorSettings(false);
+              }}
+            >
+              <TextBoxIcon />
+              {displayTextBoxStyleSettings ? (
+                <ArrowUpIcon />
+              ) : (
+                <ArrowDownIcon />
+              )}
+            </ToolbarItemWrapper>
+          </>
+        )}
+        {textBoxColor && (
+          <>
+            <ToolbarItemWrapper
+              onClick={() => {
+                setDisplayTextBoxColorSettings(!displayTextBoxColorSettings);
+                setDisplayTextColorSettings(false);
+                setDisplayTextBoxStyleSettings(false);
+              }}
+            >
+              <TextBoxColorIcon color={currentTextBoxColorSetting} />
+              {displayTextBoxColorSettings ? (
+                <ArrowUpIcon />
+              ) : (
+                <ArrowDownIcon />
+              )}
+            </ToolbarItemWrapper>
+          </>
+        )}
         <Separator verticalMargin={6} />
         <DrawIcon />
       </StyledTextToolbar>
@@ -166,6 +211,7 @@ export const TextToolbar: React.FC = () => {
               setCurrentItem={currentItem =>
                 setCurrentTypographySetting(currentItem)
               }
+              labels={bodyText.options}
             />
           </Card>
         )}
@@ -179,7 +225,7 @@ export const TextToolbar: React.FC = () => {
               }
             }}
           >
-            <Spotlight>Cor do texto</Spotlight>
+            <Spotlight>{textColor.menuTitle}</Spotlight>
             <Separator invisible />
             <CirclePicker
               color={currentTextColorSetting}
@@ -198,7 +244,7 @@ export const TextToolbar: React.FC = () => {
               }
             }}
           >
-            <Spotlight>Preenchimento</Spotlight>
+            <Spotlight>{textBoxColor.menuTitle}</Spotlight>
             <Separator invisible />
             <CirclePicker
               color={currentTextBoxColorSetting}
@@ -221,7 +267,7 @@ export const TextToolbar: React.FC = () => {
                 }
               }}
             >
-              <Spotlight>Estilos de caixa de texto</Spotlight>
+              <Spotlight>{textBoxStyle.menuTitle}</Spotlight>
               <Separator invisible />
               <TextBoxStyleCardContent
                 selectedStroke={currentTextBoxStyleSetting}

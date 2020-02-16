@@ -7,22 +7,14 @@ import { SuccessArrowIcon } from "../../../iconography";
 interface TypographyCardItemsProps {
   currentItem?: number;
   setCurrentItem?: (index: number) => void;
+  labels: string[];
 }
 
 export const TypographyCardItems = ({
   setCurrentItem,
-  currentItem
+  currentItem,
+  labels
 }: TypographyCardItemsProps) => {
-  const labels = [
-    "Título",
-    "Subtítulo 1",
-    "Subtítulo 2",
-    "Corpo de texto",
-    "Enumeração",
-    "Lista",
-    "Citação"
-  ];
-
   return (
     <>
       {labels.map((label, i) => (

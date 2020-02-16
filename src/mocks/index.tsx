@@ -145,3 +145,13 @@ export const binders: BinderInterface[] = [
   },
   philosophyBinder
 ];
+
+export const bodyTextOptions = [
+  "Title",
+  "Subtitle 1",
+  "Subtitle 2",
+  "Body text",
+  "Enumeration",
+  "List",
+  "Quote"
+];
