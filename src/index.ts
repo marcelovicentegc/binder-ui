@@ -10,7 +10,8 @@ export {
   SearchBar,
   Binder,
   BinderSize,
-  CustomContext
+  CustomContext,
+  TextToolbar
 } from "./components";
 
 export {
@@ -56,7 +57,9 @@ export {
   TextColorIcon,
   TextColorSelectionIcon,
   TextIcon,
-  TextStyleIcon
+  TextStyleIcon,
+  UndoChangesIcon,
+  RedoChangesIcon
 } from "./iconography";
 
 //Typography

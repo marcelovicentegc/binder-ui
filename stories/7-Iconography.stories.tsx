@@ -43,7 +43,9 @@ import {
   TextColorIcon,
   TextColorSelectionIcon,
   TextIcon,
-  TextStyleIcon
+  TextStyleIcon,
+  UndoChangesIcon,
+  RedoChangesIcon
 } from "../src";
 import { styled } from "../src/utils/Theme";
 
@@ -90,7 +92,9 @@ const icons = [
   <TextColorIcon />,
   <TextColorSelectionIcon />,
   <TextIcon />,
-  <TextStyleIcon />
+  <TextStyleIcon />,
+  <RedoChangesIcon />,
+  <UndoChangesIcon />
 ];
 
 const Group = styled.div`
@@ -106,9 +110,7 @@ const Group = styled.div`
   }
 `;
 
-const stories = storiesOf("Iconography", module).addParameters({
-  backgrounds: [{ name: "sky blue", value: "#00aced", default: true }]
-});
+const stories = storiesOf("Iconography", module);
 
 stories.add("default", () => <Group>{icons.map(icon => icon)}</Group>, {
   info: { inline: false }
