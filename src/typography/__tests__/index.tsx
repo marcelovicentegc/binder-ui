@@ -101,6 +101,11 @@ describe("<H3 /> test case", () => {
     const { getByText } = render(<H3>Hi, I'm H3</H3>);
     expect(getByText("Hi, I'm H3")).toMatchSnapshot();
   });
+
+  test("matches snapshot when H3 is bold", () => {
+    const { getByText } = render(<H3 bold>Hi, I'm H3</H3>);
+    expect(getByText("Hi, I'm H3")).toMatchSnapshot();
+  });
 });
 
 describe("<Label1 /> test case", () => {

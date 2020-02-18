@@ -35,9 +35,10 @@ export const H2 = styled(Base)`
   font-size: 32px;
 `;
 
-export const H3 = styled(Base)`
+export const H3 = styled(Base)<{ bold?: boolean }>`
   font-size: 20px;
   line-height: 125%;
+  ${({ bold }) => (bold ? "font-weight: 600" : "")}
 `;
 
 export const Label1 = styled(Base)`

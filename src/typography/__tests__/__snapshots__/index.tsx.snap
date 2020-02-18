@@ -65,6 +65,29 @@ exports[`<H3 /> test case matches snapshot 1`] = `
 </span>
 `;
 
+exports[`<H3 /> test case matches snapshot when H3 is bold 1`] = `
+.c0 {
+  font-family: IBM Plex Sans,sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 140.62%;
+  -webkit-letter-spacing: -0.01em;
+  -moz-letter-spacing: -0.01em;
+  -ms-letter-spacing: -0.01em;
+  letter-spacing: -0.01em;
+  color: black;
+  font-size: 20px;
+  line-height: 125%;
+  font-weight: 600;
+}
+
+<span
+  class="c0"
+>
+  Hi, I'm H3
+</span>
+`;
+
 exports[`<Label1 /> test case matches snapshot 1`] = `
 .c0 {
   font-family: IBM Plex Sans,sans-serif;
