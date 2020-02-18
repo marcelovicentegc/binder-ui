@@ -7,3 +7,4 @@ export { Binder, BinderSize } from "./Binder";
 export { CustomContext } from "./CustomContext";
 export { TextToolbar } from "./TextToolbar";
 export { Card } from "./Card";
+export { Separator } from "./Separator";
