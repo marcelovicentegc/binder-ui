@@ -1,6 +1,5 @@
 import React from "react";
 import { StepEllipse } from "./StepEllipse";
-import { observer } from "mobx-react";
 import { generateKey } from "../../utils/generateKey";
 import { StepsWrapper } from "./style";
 
@@ -10,7 +9,7 @@ interface IProps {
   setCurrentStep: (currentStep: number) => void;
 }
 
-export const Steps = observer((props: IProps) => {
+export const Steps = (props: IProps) => {
   const getSteps = () => {
     return [...new Array(props.totalSteps)].map((_, i) => (
       <StepEllipse
@@ -23,4 +22,4 @@ export const Steps = observer((props: IProps) => {
   };
 
   return <StepsWrapper>{getSteps()}</StepsWrapper>;
-});
+};
