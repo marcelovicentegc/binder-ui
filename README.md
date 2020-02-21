@@ -11,13 +11,19 @@
 ## 🔨 Usage
 
 ```typescript
-import { Button, ButtonType, SearchBar } from "@binder/ui";
+import {
+  ThemeProvider,
+  theme,
+  Button,
+  ButtonType,
+  SearchBar
+} from "@binder/ui";
 
 const App = () => {
-  <>
+  <ThemeProvider theme={theme}>
     <SearchBar />
     <Button label="Press me!" buttonType={ButtonType.primary} />
-  </>;
+  </ThemeProvider>;
 };
 ```
 
