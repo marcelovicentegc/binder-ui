@@ -47,9 +47,11 @@ interface TextToolbarProps {
   };
   textColor?: {
     menuTitle: string;
+    onChange: (color: string) => void;
   };
   textBoxColor?: {
     menuTitle: string;
+    onChange: (color: string) => void;
   };
   textBoxStyle?: {
     menuTitle: string;
@@ -366,7 +368,10 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
             <CirclePicker
               color={currentTextColorSetting}
               colors={colors}
-              onChangeComplete={color => setCurrentTextColorSetting(color.hex)}
+              onChangeComplete={color => {
+                setCurrentTextColorSetting(color.hex);
+                textColor.onChange(color.hex);
+              }}
             />
           </Card>
         )}
@@ -385,9 +390,10 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
             <CirclePicker
               color={currentTextBoxColorSetting}
               colors={colors}
-              onChangeComplete={color =>
-                setCurrentTextBoxColorSetting(color.hex)
-              }
+              onChangeComplete={color => {
+                setCurrentTextBoxColorSetting(color.hex);
+                textBoxColor.onChange(color.hex);
+              }}
             />
           </Card>
         )}

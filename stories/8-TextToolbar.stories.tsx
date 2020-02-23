@@ -15,15 +15,7 @@ stories.add(
     <TextToolbar
       bodyText={{
         label: "Body text",
-        options: [
-          "Title",
-          "Subtitle 1",
-          "Subtitle 2",
-          "Body text",
-          "Enumeration",
-          "List",
-          "Quote"
-        ]
+        options: bodyTextOptions
       }}
     />
   ),
@@ -37,7 +29,10 @@ stories.add(
   () => (
     <TextToolbar
       bodyText={{ label: "Body text", options: bodyTextOptions }}
-      textColor={{ menuTitle: "Text color" }}
+      textColor={{
+        menuTitle: "Text color",
+        onChange: color => alert("color changed to: " + color)
+      }}
     />
   ),
   {
@@ -50,8 +45,14 @@ stories.add(
   () => (
     <TextToolbar
       bodyText={{ label: "Body text", options: bodyTextOptions }}
-      textColor={{ menuTitle: "Text color" }}
-      textBoxColor={{ menuTitle: "Text box color" }}
+      textColor={{
+        menuTitle: "Text color",
+        onChange: color => alert("color changed to: " + color)
+      }}
+      textBoxColor={{
+        menuTitle: "Text box color",
+        onChange: color => alert("color changed to: " + color)
+      }}
     />
   ),
   {
@@ -64,9 +65,17 @@ stories.add(
   () => (
     <TextToolbar
       bodyText={{ label: "Body text", options: bodyTextOptions }}
-      textColor={{ menuTitle: "Text color" }}
-      textBoxColor={{ menuTitle: "Text box color" }}
-      textBoxStyle={{ menuTitle: "Text box style" }}
+      textColor={{
+        menuTitle: "Text color",
+        onChange: color => alert("color changed to: " + color)
+      }}
+      textBoxColor={{
+        menuTitle: "Text box color",
+        onChange: color => alert("color changed to: " + color)
+      }}
+      textBoxStyle={{
+        menuTitle: "Text box style"
+      }}
     />
   ),
   {
@@ -79,9 +88,17 @@ stories.add(
   () => (
     <TextToolbar
       bodyText={{ label: "Body text", options: bodyTextOptions }}
-      textColor={{ menuTitle: "Text color" }}
-      textBoxColor={{ menuTitle: "Text box color" }}
-      textBoxStyle={{ menuTitle: "Text box style" }}
+      textColor={{
+        menuTitle: "Text color",
+        onChange: color => alert("color changed to: " + color)
+      }}
+      textBoxColor={{
+        menuTitle: "Text box color",
+        onChange: color => alert("color changed to: " + color)
+      }}
+      textBoxStyle={{
+        menuTitle: "Text box style"
+      }}
       textStyle={{
         menuTitle: "Text styles",
         scopes: [
