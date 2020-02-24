@@ -47,10 +47,12 @@ interface TextToolbarProps {
   };
   textColor?: {
     menuTitle: string;
+    color: string;
     onChange: (color: string) => void;
   };
   textBoxColor?: {
     menuTitle: string;
+    color: string;
     onChange: (color: string) => void;
   };
   textBoxStyle?: {
@@ -86,17 +88,10 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
     displayTextColorSettings,
     setDisplayTextColorSettings
   ] = React.useState(false);
-  const [currentTextColorSetting, setCurrentTextColorSetting] = React.useState(
-    ""
-  );
   const [
     displayTextBoxColorSettings,
     setDisplayTextBoxColorSettings
   ] = React.useState(false);
-  const [
-    currentTextBoxColorSetting,
-    setCurrentTextBoxColorSetting
-  ] = React.useState("");
   const [
     displayTextBoxStyleSettings,
     setDisplayTextBoxStyleSettings
@@ -265,7 +260,7 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
                 setDisplayTextStyleSettings(false);
               }}
             >
-              <TextColorIcon color={currentTextColorSetting} />
+              <TextColorIcon color={textColor.color} />
               {displayTextColorSettings ? <ArrowUpIcon /> : <ArrowDownIcon />}
             </ToolbarItemWrapper>
             {(textBoxStyle || textBoxColor) && <Separator verticalMargin={6} />}
@@ -304,7 +299,7 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
               }}
               ref={textBoxColorToolbarItemRef}
             >
-              <TextBoxColorIcon color={currentTextBoxColorSetting} />
+              <TextBoxColorIcon color={textBoxColor.color} />
               {displayTextBoxColorSettings ? (
                 <ArrowUpIcon />
               ) : (
@@ -366,10 +361,9 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
             <Spotlight>{textColor.menuTitle}</Spotlight>
             <Separator invisible />
             <CirclePicker
-              color={currentTextColorSetting}
+              color={textColor.color}
               colors={colors}
               onChangeComplete={color => {
-                setCurrentTextColorSetting(color.hex);
                 textColor.onChange(color.hex);
               }}
             />
@@ -388,10 +382,9 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
             <Spotlight>{textBoxColor.menuTitle}</Spotlight>
             <Separator invisible />
             <CirclePicker
-              color={currentTextBoxColorSetting}
+              color={textBoxColor.color}
               colors={colors}
               onChangeComplete={color => {
-                setCurrentTextBoxColorSetting(color.hex);
                 textBoxColor.onChange(color.hex);
               }}
             />

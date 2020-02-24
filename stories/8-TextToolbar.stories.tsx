@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { TextToolbar } from "../src";
+import { TextToolbar, theme } from "../src";
 import { bodyTextOptions, textStyleOptions } from "../src/mocks";
 
 const stories = storiesOf("TextToolbar", module);
@@ -26,15 +26,20 @@ stories.add(
 
 stories.add(
   "with ability to select the text color",
-  () => (
-    <TextToolbar
-      bodyText={{ label: "Body text", options: bodyTextOptions }}
-      textColor={{
-        menuTitle: "Text color",
-        onChange: color => alert("color changed to: " + color)
-      }}
-    />
-  ),
+  () => {
+    const [textColor, setTextColor] = React.useState("");
+
+    return (
+      <TextToolbar
+        bodyText={{ label: "Body text", options: bodyTextOptions }}
+        textColor={{
+          menuTitle: "Text color",
+          color: textColor,
+          onChange: color => setTextColor(color)
+        }}
+      />
+    );
+  },
   {
     info: { inline: true }
   }
@@ -42,19 +47,26 @@ stories.add(
 
 stories.add(
   "with ability to select the text box color",
-  () => (
-    <TextToolbar
-      bodyText={{ label: "Body text", options: bodyTextOptions }}
-      textColor={{
-        menuTitle: "Text color",
-        onChange: color => alert("color changed to: " + color)
-      }}
-      textBoxColor={{
-        menuTitle: "Text box color",
-        onChange: color => alert("color changed to: " + color)
-      }}
-    />
-  ),
+  () => {
+    const [textColor, setTextColor] = React.useState("");
+    const [textBoxColor, setTextBoxColor] = React.useState("");
+
+    return (
+      <TextToolbar
+        bodyText={{ label: "Body text", options: bodyTextOptions }}
+        textColor={{
+          menuTitle: "Text color",
+          color: textColor,
+          onChange: color => setTextColor(color)
+        }}
+        textBoxColor={{
+          menuTitle: "Text box color",
+          color: textBoxColor,
+          onChange: color => setTextBoxColor(color)
+        }}
+      />
+    );
+  },
   {
     info: { inline: true }
   }
@@ -62,22 +74,29 @@ stories.add(
 
 stories.add(
   "with ability to select the text box style",
-  () => (
-    <TextToolbar
-      bodyText={{ label: "Body text", options: bodyTextOptions }}
-      textColor={{
-        menuTitle: "Text color",
-        onChange: color => alert("color changed to: " + color)
-      }}
-      textBoxColor={{
-        menuTitle: "Text box color",
-        onChange: color => alert("color changed to: " + color)
-      }}
-      textBoxStyle={{
-        menuTitle: "Text box style"
-      }}
-    />
-  ),
+  () => {
+    const [textColor, setTextColor] = React.useState("");
+    const [textBoxColor, setTextBoxColor] = React.useState("");
+
+    return (
+      <TextToolbar
+        bodyText={{ label: "Body text", options: bodyTextOptions }}
+        textColor={{
+          menuTitle: "Text color",
+          color: textColor,
+          onChange: color => setTextColor(color)
+        }}
+        textBoxColor={{
+          menuTitle: "Text box color",
+          color: textBoxColor,
+          onChange: color => setTextBoxColor(color)
+        }}
+        textBoxStyle={{
+          menuTitle: "Text box style"
+        }}
+      />
+    );
+  },
   {
     info: { inline: true }
   }
@@ -85,37 +104,44 @@ stories.add(
 
 stories.add(
   "with ability to select the text style",
-  () => (
-    <TextToolbar
-      bodyText={{ label: "Body text", options: bodyTextOptions }}
-      textColor={{
-        menuTitle: "Text color",
-        onChange: color => alert("color changed to: " + color)
-      }}
-      textBoxColor={{
-        menuTitle: "Text box color",
-        onChange: color => alert("color changed to: " + color)
-      }}
-      textBoxStyle={{
-        menuTitle: "Text box style"
-      }}
-      textStyle={{
-        menuTitle: "Text styles",
-        scopes: [
-          {
-            trads: "Tradicionals"
-          },
-          {
-            classics: "Classics"
-          },
-          {
-            handWritten: "Hand written"
-          }
-        ],
-        options: textStyleOptions
-      }}
-    />
-  ),
+  () => {
+    const [textColor, setTextColor] = React.useState("");
+    const [textBoxColor, setTextBoxColor] = React.useState("");
+
+    return (
+      <TextToolbar
+        bodyText={{ label: "Body text", options: bodyTextOptions }}
+        textColor={{
+          menuTitle: "Text color",
+          color: textColor,
+          onChange: color => setTextColor(color)
+        }}
+        textBoxColor={{
+          menuTitle: "Text box color",
+          color: textBoxColor,
+          onChange: color => setTextBoxColor(color)
+        }}
+        textBoxStyle={{
+          menuTitle: "Text box style"
+        }}
+        textStyle={{
+          menuTitle: "Text styles",
+          scopes: [
+            {
+              trads: "Tradicionals"
+            },
+            {
+              classics: "Classics"
+            },
+            {
+              handWritten: "Hand written"
+            }
+          ],
+          options: textStyleOptions
+        }}
+      />
+    );
+  },
   {
     info: { inline: true }
   }
