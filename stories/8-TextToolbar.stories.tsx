@@ -156,7 +156,7 @@ stories.add(
     return (
       <TextToolbar
         withDrawOption={{
-          onClick: () => alert("Change to draw toolbar")
+          onClick: () => alert("Get a pencil!")
         }}
         bodyText={{ label: "Body text", options: bodyTextOptions }}
         textColor={{

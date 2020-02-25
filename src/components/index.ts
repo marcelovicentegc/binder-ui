@@ -5,6 +5,6 @@ export { Menu, MenuItemsProps } from "./Menu";
 export { SearchBar } from "./SearchBar";
 export { Binder, BinderSize } from "./Binder";
 export { CustomContext } from "./CustomContext";
-export { TextToolbar } from "./TextToolbar";
+export { TextToolbar, TextToolbarProps } from "./TextToolbar";
 export { Card } from "./Card";
 export { Separator } from "./Separator";

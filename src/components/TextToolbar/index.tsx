@@ -32,7 +32,7 @@ interface ScopeInterface {
   [key: string]: string;
 }
 
-interface TextToolbarProps {
+export interface TextToolbarProps {
   bodyText?: {
     label: string;
     options: string[];

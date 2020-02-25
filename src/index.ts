@@ -12,6 +12,7 @@ export {
   BinderSize,
   CustomContext,
   TextToolbar,
+  TextToolbarProps,
   Card,
   Separator
 } from "./components";
