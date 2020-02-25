@@ -52,9 +52,11 @@ export const ToolbarItemWrapper = styled.div`
 `;
 
 export const MenuArea = styled.div`
-  position: relative;
+  position: absolute;
   width: auto;
   height: auto;
+  left: 0;
+  right: 0;
 `;
 
 export const ItemWrapper = styled.div<{

@@ -104,6 +104,7 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
   const textStyleToolbarItemRef = React.useRef<HTMLDivElement>();
   const textBoxStyleToolbarItemRef = React.useRef<HTMLDivElement>();
   const textBoxColorToolbarItemRef = React.useRef<HTMLDivElement>();
+  const typographyToolbarItemRef = React.useRef<HTMLDivElement>();
 
   const renderTextStyles = () => {
     const scopes: React.ReactNode[] = [];
@@ -217,6 +218,7 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
         {bodyText && (
           <>
             <ToolbarItemWrapper
+              ref={typographyToolbarItemRef}
               onClick={() => {
                 setDisplayTypographySettings(!displayTypographySettings);
                 setDisplayTextStyleSettings(false);
@@ -317,7 +319,7 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
             cardProps={{
               style: {
                 position: "absolute",
-                left: 75,
+                left: typographyToolbarItemRef.current.offsetLeft - 20,
                 top: 8,
                 minWidth: 150
               }
