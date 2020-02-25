@@ -58,5 +58,10 @@ export const FigCaption = styled.figcaption<{ disabled?: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  ${({ disabled }) => `cursor: ${disabled ? "default" : "pointer"};`}
+  ${({ disabled }) => `cursor: ${disabled ? "default" : "pointer"};
+  
+ &  > span:last-child {
+    text-align: center;
+  }
+  `}
 `;
