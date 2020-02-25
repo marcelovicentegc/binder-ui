@@ -79,6 +79,38 @@ export const contextMenuItems: MenuItemsProps[] = [
   }
 ];
 
+export const naturalSciencesBinder: BinderInterface = {
+  key: "1",
+  img: naturalSciencesBg,
+  title: { color: "#517635", text: "Sciences" },
+  desc: { color: "#727272", text: "Reino Plantae" },
+  date: new Date(2020, 1, 12)
+};
+
+export const ancientHistoryBinder: BinderInterface = {
+  key: "2",
+  img: ancientHistoryBg,
+  title: { color: "#31299", text: "History" },
+  desc: { color: "#c94129", text: "Ancient history" },
+  date: new Date(2020, 1, 11)
+};
+
+export const planeGeometryBinder: BinderInterface = {
+  key: "3",
+  img: geometryBg,
+  backgroundColor: theme.color.green6,
+  title: { color: theme.color.yellow5, text: "Geometry" },
+  desc: { color: "#fff", text: "Plane geometry" },
+  date: new Date(2019, 1, 11)
+};
+
+export const physicalGeographyBinder: BinderInterface = {
+  key: "4",
+  img: "",
+  title: { color: "#fff", text: "Phsyical geography" },
+  date: new Date(2020, 1, 8)
+};
+
 export const philosophyBinder: BinderInterface = {
   key: "5",
   img: "",
@@ -112,37 +144,11 @@ export const philosophyBinder: BinderInterface = {
   ]
 };
 
-export const planeGeometryBinder: BinderInterface = {
-  key: "3",
-  img: geometryBg,
-  backgroundColor: theme.color.green6,
-  title: { color: theme.color.yellow5, text: "Geometry" },
-  desc: { color: "#fff", text: "Plane geometry" },
-  date: new Date(2019, 1, 11)
-};
-
 export const binders: BinderInterface[] = [
-  {
-    key: "1",
-    img: naturalSciencesBg,
-    title: { color: "#517635", text: "Sciences" },
-    desc: { color: "#727272", text: "Reino Plantae" },
-    date: new Date(2020, 1, 12)
-  },
-  {
-    key: "2",
-    img: ancientHistoryBg,
-    title: { color: "#31299", text: "History" },
-    desc: { color: "#c94129", text: "Ancient history" },
-    date: new Date(2020, 1, 11)
-  },
+  naturalSciencesBinder,
+  ancientHistoryBinder,
   planeGeometryBinder,
-  {
-    key: "4",
-    img: "",
-    title: { color: "#fff", text: "Phsyical geography" },
-    date: new Date(2020, 1, 8)
-  },
+  physicalGeographyBinder,
   philosophyBinder
 ];
 

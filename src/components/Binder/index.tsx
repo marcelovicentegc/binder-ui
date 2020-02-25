@@ -30,8 +30,8 @@ export interface BinderInterface {
 
 interface BinderProps {
   binder: BinderInterface;
-  onClick: () => void;
-  contextMenu: MenuItemsProps[];
+  onClick?: () => void;
+  contextMenu?: MenuItemsProps[];
   disabled?: boolean;
   size?: BinderSize;
   setCurrentBinder?: (currentBinder: BinderInterface) => void;
@@ -79,7 +79,9 @@ export const Binder = ({
 
   return (
     <FigureWrapper size={size}>
-      <CustomContext showMenu={showContextMenu} menu={contextMenu} />
+      {!disabled && contextMenu && (
+        <CustomContext showMenu={showContextMenu} menu={contextMenu} />
+      )}
       <Figure
         ref={figureRef}
         onClick={onClick}
