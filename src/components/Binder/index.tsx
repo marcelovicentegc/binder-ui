@@ -28,7 +28,7 @@ export interface BinderInterface {
   date?: Date;
 }
 
-interface BinderProps {
+export interface BinderProps {
   binder: BinderInterface;
   onClick?: () => void;
   contextMenu?: MenuItemsProps[];
