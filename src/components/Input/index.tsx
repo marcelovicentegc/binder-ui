@@ -1,7 +1,7 @@
 import React from "react";
 import { InputWrapper, LabelWrapper } from "./style";
 import { Label2 } from "../../typography";
-import { StyledInput } from "../../bases/Input";
+import { StyledInput } from "../../base/Input";
 
 export enum InputType {
   primary = "primary",

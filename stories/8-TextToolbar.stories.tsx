@@ -146,3 +146,51 @@ stories.add(
     info: { inline: true }
   }
 );
+
+stories.add(
+  "with handler to switch to draw option",
+  () => {
+    const [textColor, setTextColor] = React.useState("");
+    const [textBoxColor, setTextBoxColor] = React.useState("");
+
+    return (
+      <TextToolbar
+        withDrawOption={{
+          onClick: () => alert("Change to draw toolbar")
+        }}
+        bodyText={{ label: "Body text", options: bodyTextOptions }}
+        textColor={{
+          menuTitle: "Text color",
+          color: textColor,
+          onChange: color => setTextColor(color)
+        }}
+        textBoxColor={{
+          menuTitle: "Text box color",
+          color: textBoxColor,
+          onChange: color => setTextBoxColor(color)
+        }}
+        textBoxStyle={{
+          menuTitle: "Text box style"
+        }}
+        textStyle={{
+          menuTitle: "Text styles",
+          scopes: [
+            {
+              trads: "Tradicionals"
+            },
+            {
+              classics: "Classics"
+            },
+            {
+              handWritten: "Hand written"
+            }
+          ],
+          options: textStyleOptions
+        }}
+      />
+    );
+  },
+  {
+    info: { inline: true }
+  }
+);

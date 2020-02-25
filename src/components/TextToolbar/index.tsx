@@ -26,7 +26,7 @@ import { ArrowUpIcon } from "../../iconography/ArrowUpIcon";
 import { CirclePicker } from "react-color";
 import { TextBoxStyleCardContent, StrokeType } from "./TextBoxStyleCardContent";
 import { generateKey } from "../../utils/generateKey";
-import { Column } from "../../bases/Flex";
+import { Column } from "../../base/Flex";
 
 interface ScopeInterface {
   [key: string]: string;
@@ -58,6 +58,9 @@ interface TextToolbarProps {
   textBoxStyle?: {
     menuTitle: string;
   };
+  withDrawOption?: {
+    onClick: () => void;
+  };
 }
 
 export const TextToolbar: React.FC<TextToolbarProps> = ({
@@ -65,7 +68,8 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
   textStyle,
   textColor,
   textBoxColor,
-  textBoxStyle
+  textBoxStyle,
+  withDrawOption
 }) => {
   const [
     displayTypographySettings,
@@ -310,8 +314,14 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
             </ToolbarItemWrapper>
           </>
         )}
-        <Separator verticalMargin={6} />
-        <DrawIcon />
+        {withDrawOption && (
+          <>
+            <Separator verticalMargin={6} />
+            <ToolbarItemWrapper onClick={withDrawOption.onClick}>
+              <DrawIcon />
+            </ToolbarItemWrapper>
+          </>
+        )}
       </StyledTextToolbar>
       <MenuArea>
         {displayTypographySettings && (
