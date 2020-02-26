@@ -10,8 +10,8 @@ export const Figure = styled.figure<{
   carouselMode?: boolean;
   backgroundColor?: string;
 }>`
-  border-bottom-right-radius: 13px;
-  border-top-right-radius: 13px;
+  border-bottom-right-radius: 35px;
+  border-top-right-radius: 35px;
   margin: 0;
   height: 0;
   padding-top: 129.79351032448378%;
@@ -43,8 +43,6 @@ export const Figure = styled.figure<{
 `;
 
 export const Image = styled.img<{ disabled?: boolean }>`
-  border-bottom-right-radius: 13px;
-  border-top-right-radius: 13px;
   width: 100%;
   position: absolute;
   top: 0;
