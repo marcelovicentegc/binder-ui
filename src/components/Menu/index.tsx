@@ -1,4 +1,4 @@
-import React from "react";
+import React, { HTMLProps } from "react";
 import { MenuWrapper, StyledMenu, TitleWrapper } from "./style";
 import { BodyText } from "../../typography";
 import { Separator } from "../Separator";
@@ -16,7 +16,8 @@ export interface MenuItemsProps {
   descriptions?: React.ReactNode[];
 }
 
-export interface MenuProps {
+export interface MenuProps
+  extends Omit<HTMLProps<HTMLDivElement>, "ref" | "as"> {
   menuItems: MenuItemsProps[];
   menuIconProps?: React.SVGProps<SVGSVGElement>;
   topSpace: number;
@@ -30,7 +31,8 @@ export const Menu = ({
   topSpace,
   rightSpace,
   showMenu,
-  rightAsLeft
+  rightAsLeft,
+  ...props
 }: MenuProps) => {
   const getMenuItemMode = (mode: TMenuMode | null) => {
     switch (mode) {
@@ -50,6 +52,7 @@ export const Menu = ({
           top={topSpace}
           right={!rightAsLeft && rightSpace}
           left={rightAsLeft && rightSpace}
+          {...props}
         >
           <ul>
             {menuItems.map((menuItem, index) => (
