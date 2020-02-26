@@ -12,3 +12,11 @@ stories.add(
     info: { inline: true }
   }
 );
+
+stories.add(
+  "positioning element via props",
+  () => <Menu menuItems={menuItems} topSpace={50} rightSpace={20} showMenu />,
+  {
+    info: { inline: true }
+  }
+);

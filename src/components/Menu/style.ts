@@ -6,13 +6,20 @@ export const MenuWrapper = styled.aside`
 `;
 
 export const StyledMenu = styled.nav<
-  Omit<MenuProps, "showMenu" | "rightAsLeft" | "rightSpace" | "menuItems"> & {
+  Omit<
+    MenuProps,
+    "showMenu" | "rightAsLeft" | "rightSpace" | "menuItems" | "topSpace"
+  > & {
+    top?: number;
     right?: number;
     left?: number;
   }
 >`
-  ${({ theme }) => `border-radius: 13px;
+  ${({ theme, top, right, left }) => `border-radius: 13px;
   position: absolute;
+  ${top ? `top: ${top}px` : ""}
+  ${right ? `right: ${right}px` : ""}
+  ${left ? `left: ${left}px` : ""}
   width: max-content;
   z-index: 2;
   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.3);

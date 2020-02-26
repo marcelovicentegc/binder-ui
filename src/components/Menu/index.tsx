@@ -47,7 +47,7 @@ export const Menu = ({
     <MenuWrapper>
       {showMenu && (
         <StyledMenu
-          topSpace={topSpace}
+          top={topSpace}
           right={!rightAsLeft && rightSpace}
           left={rightAsLeft && rightSpace}
         >
