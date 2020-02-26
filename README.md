@@ -19,12 +19,12 @@ import {
   SearchBar
 } from "@binder/ui";
 
-const App = () => {
+const App = () => (
   <ThemeProvider theme={theme}>
     <SearchBar />
     <Button label="Press me!" buttonType={ButtonType.primary} />
-  </ThemeProvider>;
-};
+  </ThemeProvider>
+);
 ```
 
 ## ⬆️ Development directions
