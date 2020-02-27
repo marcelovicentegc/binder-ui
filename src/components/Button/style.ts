@@ -72,7 +72,8 @@ export const StyledButton = styled(StyledButtonBase)<StyledButtonProps>`
     background: white;
     
     &:hover {
-      background: none;
+      background: white;
+      backdrop-filter: none;
       box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.15);
     }`
         : ""
@@ -89,6 +90,7 @@ export const StyledButton = styled(StyledButtonBase)<StyledButtonProps>`
         }
 
         &:hover { 
+          backdrop-filter: none;
           background: ${theme.color.black2};
           box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.15);
         }
