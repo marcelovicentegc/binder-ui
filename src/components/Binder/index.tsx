@@ -1,4 +1,4 @@
-import React from "react";
+import React, { HTMLProps } from "react";
 import { CustomContext } from "../CustomContext";
 import { MenuItemsProps } from "../Menu";
 import { FigureWrapper, Figure, FigCaption, Image } from "./style";
@@ -28,7 +28,11 @@ export interface BinderInterface {
   date?: Date;
 }
 
-export interface BinderProps {
+export interface BinderProps
+  extends Omit<
+    HTMLProps<HTMLDivElement>,
+    "ref" | "onClick" | "contextMenu" | "size" | "as"
+  > {
   binder: BinderInterface;
   onClick?: () => void;
   contextMenu?: MenuItemsProps[];
@@ -45,7 +49,8 @@ export const Binder = ({
   contextMenu,
   carousel,
   onClick,
-  size
+  size,
+  ...props
 }: BinderProps) => {
   const [showContextMenu, setShowContextMenu] = React.useState(false);
   const figureRef = React.useRef<HTMLDivElement>();
@@ -78,7 +83,7 @@ export const Binder = ({
   }, []);
 
   return (
-    <FigureWrapper size={size}>
+    <FigureWrapper size={size} {...props}>
       {!disabled && contextMenu && (
         <CustomContext showMenu={showContextMenu} menu={contextMenu} />
       )}
