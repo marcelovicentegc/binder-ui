@@ -21,8 +21,7 @@ export const Figure = styled.figure<{
   width: 100%;
   ${({ backgroundColor }) =>
     backgroundColor
-      ? `background-color: ${backgroundColor};
-          mix-blend-mode: hard-light;`
+      ? `background-color: ${backgroundColor};`
       : "background-color: #fff;"}
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
   cursor: pointer;
