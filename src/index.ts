@@ -87,3 +87,4 @@ export {
 // Theming
 export { ThemeProvider } from "styled-components";
 export { theme } from "./utils/Theme";
+export { palette } from "./utils/palette";
