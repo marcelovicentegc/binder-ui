@@ -23,7 +23,7 @@ export const StyledMenu = styled.nav<
   width: max-content;
   z-index: 2;
   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.3);
-  background-color: rgba(255, 255, 255);
+  background-color: #fff;
 
   ul {
     list-style-type: none;
