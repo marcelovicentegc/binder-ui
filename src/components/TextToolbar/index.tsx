@@ -359,11 +359,12 @@ export const TextToolbar: React.FC<TextToolbarProps> = ({
             <Separator invisible />
             <CirclePicker
               color={textBoxColor.color}
-              colors={palett}
+              colors={palette}
               onChangeComplete={color => {
                 textBoxColor.onChange(color.hex);
               }}
             />
+            palette
           </Card>
         )}
         {displayTextBoxStyleSettings && (
