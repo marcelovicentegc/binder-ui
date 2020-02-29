@@ -2,7 +2,8 @@ import { styled } from "../../utils/Theme";
 import { BinderSize } from ".";
 
 export const FigureWrapper = styled.div<{ size?: BinderSize }>`
-  width: ${({ size }) => (size ? size : BinderSize.small)};
+  margin-right: 16px;
+  max-width: ${({ size }) => (size ? size : BinderSize.small)};
 `;
 
 export const Figure = styled.figure<{
