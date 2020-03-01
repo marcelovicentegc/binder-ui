@@ -1,5 +1,10 @@
 import React from "react";
-import { StyledButton, StyledButtonProps, IconWrapper } from "./style";
+import {
+  StyledButton,
+  StyledButtonProps,
+  ItemWrapper,
+  ButtonChildrenWrapper
+} from "./style";
 import { Label2 } from "../../typography";
 
 export enum ButtonType {
@@ -16,13 +21,7 @@ export enum ButtonSize {
 }
 
 interface IProps
-  extends Omit<
-      React.DetailedHTMLProps<
-        React.ButtonHTMLAttributes<HTMLButtonElement>,
-        HTMLButtonElement
-      >,
-      "ref" | "type"
-    >,
+  extends Omit<React.HTMLProps<HTMLButtonElement>, "ref" | "type" | "as">,
     Omit<StyledButtonProps, "withIcon" | "withSecondaryIcon"> {
   label: string;
   icon?: React.ReactNode;
@@ -36,6 +35,7 @@ export const Button = ({
   secondaryIcon,
   label,
   labelProps,
+  buttonSize,
   ...props
 }: IProps) => {
   return (
@@ -43,13 +43,16 @@ export const Button = ({
       buttonType={buttonType}
       withIcon={!!icon}
       withSecondaryIcon={!!secondaryIcon}
+      buttonSize={buttonSize}
       {...props}
     >
-      {icon && <IconWrapper>{icon}</IconWrapper>}
-      {buttonType !== ButtonType.round && (
-        <Label2 {...labelProps}>{label}</Label2>
-      )}
-      {secondaryIcon && <IconWrapper>{secondaryIcon}</IconWrapper>}
+      <ButtonChildrenWrapper buttonSize={buttonSize}>
+        {icon && <ItemWrapper>{icon}</ItemWrapper>}
+        {buttonType !== ButtonType.round && (
+          <Label2 {...labelProps}>{label}</Label2>
+        )}
+        {secondaryIcon && <ItemWrapper>{secondaryIcon}</ItemWrapper>}
+      </ButtonChildrenWrapper>
     </StyledButton>
   );
 };

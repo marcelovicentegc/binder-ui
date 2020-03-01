@@ -7,7 +7,9 @@ import {
   ArrowIcon,
   BackArrowIcon,
   NewIcon,
-  EditBinderIcon
+  EditBinderIcon,
+  Separator,
+  BinderIcon
 } from "../src";
 import { Mode } from "../src/utils/generics";
 
@@ -183,22 +185,34 @@ stories.add(
     const [backgroundColor, setBackgroundColor] = React.useState("#015649");
 
     return (
-      <Button
-        label="New binder"
-        buttonType={ButtonType.tertiary}
-        icon={<NewIcon color={"white"} />}
-        onMouseEnter={() => setBackgroundColor("#027462")}
-        onMouseLeave={() => setBackgroundColor("#015649")}
-        style={{
-          backgroundColor
-        }}
-        labelProps={{
-          style: {
-            color: "#F5F5F5"
-          }
-        }}
-        onClick={() => alert("🚀🚀🚀🚀🚀🚀🚀")}
-      />
+      <>
+        <Button
+          label="New binder"
+          buttonType={ButtonType.tertiary}
+          icon={<NewIcon color={"white"} />}
+          onMouseEnter={() => setBackgroundColor("#027462")}
+          onMouseLeave={() => setBackgroundColor("#015649")}
+          style={{
+            backgroundColor
+          }}
+          labelProps={{
+            style: {
+              color: "#F5F5F5"
+            }
+          }}
+          onClick={() => alert("🚀🚀🚀🚀🚀🚀🚀")}
+        />
+        <Separator invisible />
+        <Button
+          label="Login with Binder"
+          buttonType={ButtonType.secondary}
+          icon={<BinderIcon />}
+          style={{
+            width: "360px"
+          }}
+          onClick={() => alert("🚀🚀🚀🚀🚀🚀🚀")}
+        />
+      </>
     );
   },
   {

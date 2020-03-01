@@ -28,17 +28,7 @@ const StyledButtonBase = styled.button`
     &:hover {
       background: ${theme.color.white2};
     }
-    
-    span {
-      font-size: 16px;
-      line-height: 29px;
-      letter-spacing: -0.38px;
-    }
 
-    > div > svg { 
-      max-height: 20px;
-      max-width: 20px;
-    }
     `;
   }}
 `;
@@ -147,7 +137,7 @@ export const StyledButton = styled(StyledButtonBase)<StyledButtonProps>`
         border: 2px solid ${theme.color.white2};
       }
 
-      > div > svg {
+      > div > div > svg {
         min-height: 20px;
         min-width: 20px;
       }
@@ -161,12 +151,12 @@ export const StyledButton = styled(StyledButtonBase)<StyledButtonProps>`
         ${
           buttonType !== ButtonType.round
             ? `display: flex; 
-        justify-content: center; 
-        align-items: center; `
+            justify-content: center; 
+            align-items: center; `
             : ""
         }
 
-        > div > svg:first-child {
+        > div > div > svg:first-child {
         ${
           buttonType === ButtonType.round
             ? "margin-right: 0px;"
@@ -181,12 +171,12 @@ export const StyledButton = styled(StyledButtonBase)<StyledButtonProps>`
       ${
         buttonType !== ButtonType.round
           ? `display: flex; 
-    justify-content: center; 
-    align-items: center; `
+          justify-content: center; 
+          align-items: center; `
           : ""
       }
 
-      > div > svg:last-child {
+      > div > div > svg:last-child {
         margin-left: 5px;
         display: flex;
         align-items: center;
@@ -195,7 +185,29 @@ export const StyledButton = styled(StyledButtonBase)<StyledButtonProps>`
   }}
 `;
 
-export const IconWrapper = styled.div`
+export const ButtonChildrenWrapper = styled.div<{ buttonSize?: ButtonSize }>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  bottom: 1px;
+  ${({ buttonSize }) =>
+    buttonSize === ButtonSize.small ? "height: 31px" : "height: 39px;"}
+
+  span {
+    font-size: 16px;
+    line-height: 29px;
+    letter-spacing: -0.38px;
+  }
+
+  > div > svg {
+    max-height: 20px;
+    max-width: 20px;
+  }
+`;
+
+export const ItemWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
