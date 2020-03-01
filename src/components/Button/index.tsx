@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledButton, StyledButtonProps } from "./style";
+import { StyledButton, StyledButtonProps, IconWrapper } from "./style";
 import { Label2 } from "../../typography";
 
 export enum ButtonType {
@@ -45,11 +45,11 @@ export const Button = ({
       withSecondaryIcon={!!secondaryIcon}
       {...props}
     >
-      {icon && icon}
+      {icon && <IconWrapper>{icon}</IconWrapper>}
       {buttonType !== ButtonType.round && (
         <Label2 {...labelProps}>{label}</Label2>
       )}
-      {secondaryIcon && secondaryIcon}
+      {secondaryIcon && <IconWrapper>{secondaryIcon}</IconWrapper>}
     </StyledButton>
   );
 };

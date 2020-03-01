@@ -35,7 +35,7 @@ const StyledButtonBase = styled.button`
       letter-spacing: -0.38px;
     }
 
-    svg { 
+    > div > svg { 
       max-height: 20px;
       max-width: 20px;
     }
@@ -146,6 +146,11 @@ export const StyledButton = styled(StyledButtonBase)<StyledButtonProps>`
       &:hover { 
         border: 2px solid ${theme.color.white2};
       }
+
+      > div > svg {
+        min-height: 20px;
+        min-width: 20px;
+      }
     `
         : ""
     }
@@ -161,17 +166,12 @@ export const StyledButton = styled(StyledButtonBase)<StyledButtonProps>`
             : ""
         }
 
-        svg:first-child {
+        > div > svg:first-child {
         ${
           buttonType === ButtonType.round
             ? "margin-right: 0px;"
             : "margin-right: 5px;"
         }
-      }
-  
-      div:first-child {
-        width: 18px;
-        margin-right: 16px;
       }`
         : ""
     }
@@ -186,8 +186,17 @@ export const StyledButton = styled(StyledButtonBase)<StyledButtonProps>`
           : ""
       }
 
-      svg:last-child {
+      > div > svg:last-child {
         margin-left: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }`}`;
   }}
+`;
+
+export const IconWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
