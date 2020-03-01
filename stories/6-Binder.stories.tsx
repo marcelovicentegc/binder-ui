@@ -6,7 +6,8 @@ import {
   onClick,
   philosophyBinder,
   planeGeometryBinder,
-  naturalSciencesBinder
+  naturalSciencesBinder,
+  ancientHistoryBinder
 } from "../src/mocks";
 
 const stories = storiesOf("Binder", module);
@@ -14,13 +15,7 @@ const stories = storiesOf("Binder", module);
 stories.add(
   "default (small)",
   () => {
-    return (
-      <Binder
-        binder={planeGeometryBinder}
-        contextMenu={contextMenuItems}
-        onClick={onClick}
-      />
-    );
+    return <Binder binder={planeGeometryBinder} onClick={onClick} />;
   },
   {
     info: { inline: true }
@@ -33,9 +28,24 @@ stories.add(
     return (
       <Binder
         binder={philosophyBinder}
-        contextMenu={contextMenuItems}
         onClick={onClick}
         size={BinderSize.medium}
+      />
+    );
+  },
+  {
+    info: { inline: true }
+  }
+);
+
+stories.add(
+  "with custom context menu",
+  () => {
+    return (
+      <Binder
+        binder={ancientHistoryBinder}
+        contextMenu={contextMenuItems}
+        onClick={onClick}
       />
     );
   },
