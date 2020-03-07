@@ -11,6 +11,7 @@ export enum BinderSize {
 
 export interface BoardInterface {
   key: string;
+  fk: string;
   date?: Date;
   title: string;
   snapshot: string;
