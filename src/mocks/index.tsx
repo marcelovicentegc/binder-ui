@@ -121,12 +121,14 @@ export const philosophyBinder: BinderInterface = {
   boards: [
     {
       key: "1",
+      fk: "5",
       date: new Date(2020, 1, 2),
       title: "Hermeneutics of oneself",
       snapshot: ""
     },
     {
       key: "2",
+      fk: "5",
       date: new Date(2020, 1, 1),
       title: "Interpretation theory",
       snapshot: "",
@@ -135,6 +137,7 @@ export const philosophyBinder: BinderInterface = {
     },
     {
       key: "3",
+      fk: "5",
       date: new Date(2020, 1, 13),
       title: "Life and work of Heidegger",
       snapshot: "",
