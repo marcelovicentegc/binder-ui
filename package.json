@@ -23,7 +23,7 @@
     "start": "start-storybook -p 4000",
     "test": "jest \"(/__tests__/.)*\\.tsx?$\" --coverage --colors --silent",
     "test:watch": "jest \"(/__tests__/.)*\\.tsx?$\" --coverage --colors --watch",
-    "all": "npm run build && npm run build:storybook && npm run check && npm run test"
+    "all": "npm run check && npm run build && npm run build:storybook && npm run check && npm run test"
   },
   "peerDependencies": {
     "react": ">=16.12.0",

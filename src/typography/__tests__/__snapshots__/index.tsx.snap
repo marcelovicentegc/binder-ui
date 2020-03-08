@@ -11,6 +11,7 @@ exports[`<H1 /> test case matches snapshot 1`] = `
   -ms-letter-spacing: -0.01em;
   letter-spacing: -0.01em;
   color: black;
+  opacity: 1;
   font-weight: 600;
   font-size: 40px;
 }
@@ -33,6 +34,7 @@ exports[`<H2 /> test case matches snapshot 1`] = `
   -ms-letter-spacing: -0.01em;
   letter-spacing: -0.01em;
   color: black;
+  opacity: 1;
   font-size: 32px;
 }
 
@@ -54,6 +56,7 @@ exports[`<H3 /> test case matches snapshot 1`] = `
   -ms-letter-spacing: -0.01em;
   letter-spacing: -0.01em;
   color: black;
+  opacity: 1;
   font-size: 20px;
   line-height: 125%;
 }
@@ -76,6 +79,7 @@ exports[`<H3 /> test case matches snapshot when H3 is bold 1`] = `
   -ms-letter-spacing: -0.01em;
   letter-spacing: -0.01em;
   color: black;
+  opacity: 1;
   font-size: 20px;
   line-height: 125%;
   font-weight: 600;
@@ -99,6 +103,7 @@ exports[`<Label1 /> test case matches snapshot 1`] = `
   -ms-letter-spacing: -0.01em;
   letter-spacing: -0.01em;
   color: black;
+  opacity: 1;
   font-weight: 600;
   font-size: 22px;
 }
@@ -121,6 +126,7 @@ exports[`<Label2 /> test case matches snapshot 1`] = `
   -ms-letter-spacing: -0.01em;
   letter-spacing: -0.01em;
   color: black;
+  opacity: 1;
   font-weight: 500;
   font-size: 16px;
 }
@@ -143,6 +149,7 @@ exports[`<Legend /> test case matches snapshot 1`] = `
   -ms-letter-spacing: -0.01em;
   letter-spacing: -0.01em;
   color: black;
+  opacity: 1;
   font-size: 14px;
 }
 
@@ -164,6 +171,7 @@ exports[`<Legend2 /> test case matches snapshot 1`] = `
   -ms-letter-spacing: -0.01em;
   letter-spacing: -0.01em;
   color: black;
+  opacity: 1;
   font-size: 12px;
   line-height: 140.62%;
   color: #999999;
@@ -187,6 +195,7 @@ exports[`<Legend3 /> test case matches snapshot 1`] = `
   -ms-letter-spacing: -0.01em;
   letter-spacing: -0.01em;
   color: black;
+  opacity: 1;
   font-size: 12px;
   line-height: 140.62%;
   font-weight: 600;
@@ -212,6 +221,7 @@ exports[`<Spotlight /> test case matches snapshot 1`] = `
   -ms-letter-spacing: -0.01em;
   letter-spacing: -0.01em;
   color: black;
+  opacity: 1;
   font-weight: 600;
   font-size: 18px;
 }
@@ -234,6 +244,7 @@ exports[`<Subtitle /> test case matches snapshot 1`] = `
   -ms-letter-spacing: -0.01em;
   letter-spacing: -0.01em;
   color: black;
+  opacity: 1;
   font-size: 28px;
   color: black;
 }
@@ -255,7 +266,8 @@ exports[`<Subtitle /> test case matches snapshot when color is passed via props 
   -moz-letter-spacing: -0.01em;
   -ms-letter-spacing: -0.01em;
   letter-spacing: -0.01em;
-  color: black;
+  color: #BB3B46;
+  opacity: 1;
   font-size: 28px;
   color: #BB3B46;
 }
@@ -279,6 +291,7 @@ exports[`<Title /> test case matches snapshot 1`] = `
   -ms-letter-spacing: -0.01em;
   letter-spacing: -0.01em;
   color: black;
+  opacity: 1;
   font-weight: bold;
   font-size: 44px;
 }
@@ -301,6 +314,7 @@ exports[`<Title2 /> test case matches snapshot 1`] = `
   -ms-letter-spacing: -0.01em;
   letter-spacing: -0.01em;
   color: black;
+  opacity: 1;
   font-weight: bold;
   font-size: 36px;
   color: black;
@@ -323,7 +337,8 @@ exports[`<Title2 /> test case matches snapshot when color is passed via props 1`
   -moz-letter-spacing: -0.01em;
   -ms-letter-spacing: -0.01em;
   letter-spacing: -0.01em;
-  color: black;
+  color: #831D23;
+  opacity: 1;
   font-weight: bold;
   font-size: 36px;
   color: #831D23;
