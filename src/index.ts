@@ -65,7 +65,8 @@ export {
   UndoChangesIcon,
   RedoChangesIcon,
   SelectedIcon,
-  SelectItemsIcon
+  SelectItemsIcon,
+  RestoreIcon
 } from "./iconography";
 
 //Typography

@@ -45,7 +45,8 @@ import {
   UndoChangesIcon,
   RedoChangesIcon,
   SelectedIcon,
-  SelectItemsIcon
+  SelectItemsIcon,
+  RestoreIcon
 } from "../src";
 import { styled, theme } from "../src/utils/Theme";
 
@@ -96,7 +97,8 @@ const icons = [
   <RedoChangesIcon />,
   <UndoChangesIcon />,
   <SelectedIcon dimension={40} />,
-  <SelectItemsIcon />
+  <SelectItemsIcon />,
+  <RestoreIcon />
 ];
 
 const Group = styled.div`

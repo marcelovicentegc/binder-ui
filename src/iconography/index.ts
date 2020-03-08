@@ -43,3 +43,4 @@ export { RedoChangesIcon } from "./RedoChangesIcon";
 export { UndoChangesIcon } from "./UndoChangesIcon";
 export { SelectedIcon } from "./SelectedIcon";
 export { SelectItemsIcon } from "./SelectItemsIcon";
+export { RestoreIcon } from "./RestoreIcon";
