@@ -82,8 +82,8 @@ export const contextMenuItems: MenuItemsProps[] = [
 export const naturalSciencesBinder: BinderInterface = {
   key: "1",
   img: naturalSciencesBg,
-  title: { color: "#517635", text: "Sciences" },
-  desc: { color: "#727272", text: "Reino Plantae" },
+  title: { color: "#FFFFFF", text: "Sciences" },
+  desc: { color: "#FFFFFF", text: "Reino Plantae" },
   date: new Date(2020, 1, 12)
 };
 
@@ -101,6 +101,10 @@ export const planeGeometryBinder: BinderInterface = {
   backgroundColor: theme.color.green6,
   title: { color: theme.color.yellow5, text: "Geometry" },
   desc: { color: "#fff", text: "Plane geometry" },
+  courseInformation: {
+    grade: "10th grade",
+    teacher: "Mr. Skogen"
+  },
   date: new Date(2019, 1, 11)
 };
 
@@ -118,6 +122,10 @@ export const philosophyBinder: BinderInterface = {
   desc: { color: theme.color.white3, text: "Hermeneutics" },
   backgroundColor: theme.color.purple1,
   date: new Date(2020, 1, 3),
+  courseInformation: {
+    grade: "12th grade",
+    teacher: "Mrs. Bauman"
+  },
   boards: [
     {
       key: "1",

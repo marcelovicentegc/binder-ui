@@ -2,7 +2,7 @@ import React, { HTMLProps } from "react";
 import { CustomContext } from "../CustomContext";
 import { MenuItemsProps } from "../Menu";
 import { FigureWrapper, Figure, FigCaption, Image } from "./style";
-import { Title2, Subtitle } from "../../typography";
+import { Title2, Subtitle, Label2 } from "../../typography";
 
 export enum BinderSize {
   small = "339px",
@@ -25,6 +25,11 @@ export interface BinderInterface {
   img?: string;
   backgroundColor?: string;
   desc?: { color: string; text: string };
+  courseInformation?: {
+    grade: string;
+    teacher: string;
+    schedule?: string;
+  };
   boards?: BoardInterface[];
   date?: Date;
 }
@@ -104,7 +109,18 @@ export const Binder = ({
           />
         )}
         <FigCaption disabled={disabled}>
-          <Title2 ref={spanRef} color={binder.title.color}>
+          {binder.courseInformation && (
+            <Label2
+              color={binder.desc ? binder.desc.color : binder.title.color}
+              opacity={"0.75"}
+              style={{
+                paddingBottom: "7px"
+              }}
+            >
+              {binder.courseInformation.grade}
+            </Label2>
+          )}
+          <Title2 ref={spanRef} color={binder.title.color} opacity={"0.9"}>
             {binder.title.text}
           </Title2>
           <Subtitle color={binder.desc?.color}>{binder.desc?.text}</Subtitle>
