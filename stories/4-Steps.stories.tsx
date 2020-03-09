@@ -13,6 +13,26 @@ stories.add(
 
     return (
       <Steps
+        type={"secondary"}
+        totalSteps={5}
+        currentStep={currentStep}
+        setCurrentStep={currentStep => setCurrentStep(currentStep)}
+      />
+    );
+  },
+  {
+    info: { inline: true }
+  }
+);
+
+stories.add(
+  "primary",
+  () => {
+    const [currentStep, setCurrentStep] = React.useState(1);
+
+    return (
+      <Steps
+        type={"primary"}
         totalSteps={5}
         currentStep={currentStep}
         setCurrentStep={currentStep => setCurrentStep(currentStep)}

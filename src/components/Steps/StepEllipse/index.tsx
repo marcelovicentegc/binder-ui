@@ -12,6 +12,7 @@ interface IProps
   isCurrentStep?: boolean;
   currentStepValue: number;
   onClick: (value: number) => void;
+  type: "primary" | "secondary";
 }
 
 export const StepEllipse = ({

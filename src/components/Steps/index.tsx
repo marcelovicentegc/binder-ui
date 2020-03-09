@@ -7,6 +7,7 @@ interface IProps {
   totalSteps: number;
   currentStep: number;
   setCurrentStep: (currentStep: number) => void;
+  type: "primary" | "secondary";
 }
 
 export const Steps = (props: IProps) => {
@@ -17,6 +18,7 @@ export const Steps = (props: IProps) => {
         key={generateKey(20)}
         currentStepValue={i + 1}
         onClick={currentStepValue => props.setCurrentStep(currentStepValue)}
+        type={props.type}
       />
     ));
   };
